@@ -1,0 +1,227 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.profileContainer {
+    scroll-margin-block-start: 7svh;
+    margin-block-start: mix.px-to-rem(-120px);
+    position: relative;
+    z-index: 200;
+    @include mix.theme(dark, 'accent');
+
+    .about {
+        width: 75vw;
+        margin: auto;
+        display: grid;
+        align-items: center;
+        @include mix.responsive-size(null, 24px, null);
+        grid-template-areas: 'title image ' 'about image ' 'skills image';
+        grid-template-columns: 2fr 1fr;
+        gap: mix.px-to-rem(36px);
+
+        .aboutMe {
+            grid-area: title;
+        }
+
+        .textContainer {
+            grid-area: about;
+            height: 100%;
+
+            .textAboutMe {
+                @include mix.responsive-size(16px, null, null);
+            }
+        }
+
+        .photoContainer {
+            grid-area: image;
+            display: grid;
+            place-items: center;
+            position: relative;
+            height: fit-content;
+            flex: 1;
+            min-width: 100%;
+
+            .profileImage {
+                height: 100%;
+                width: 100%;
+                max-width: mix.px-to-rem(350px);
+                border: 2px solid vars.$color-details;
+                object-fit: cover;
+                position: relative;
+                z-index: 200;
+                border-radius: 150px 150px 10px 10px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                max-width: mix.px-to-rem(350px);
+                top: 53%;
+                left: 55%;
+                transform: translate(-50%, -50%);
+                background-color: vars.$color-shadow;
+                opacity: 0.5;
+                border: 2px solid vars.$color-details;
+                z-index: 100;
+                border-radius: 150px 150px 10px 10px;
+            }
+        }
+
+        .skills {
+            grid-area: skills;
+            display: flex;
+            flex-direction: column;
+            padding: mix.px-to-rem(20px);
+            width: 100%;
+
+            .subTitle {
+                @include mix.responsive-size(28px, null, null);
+            }
+
+            .stackContainer {
+                display: flex;
+                flex-wrap: wrap;
+                gap: mix.px-to-rem(20px);
+                @include mix.responsive-size(null, 16px, null);
+
+                .skillImage {
+                    width: mix.px-to-rem(42px);
+                    height: mix.px-to-rem(42px);
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('wave') {
+        .about {
+            width: 90vw;
+
+            .textContainer {
+                padding-block-start: mix.px-to-rem(20px);
+
+                .textAboutMe {
+                    @include mix.responsive-size(14px, null, null);
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('laptopSmall') {
+        & {
+            margin-block-start: mix.px-to-rem(-160px);
+
+            .about {
+                padding-block-start: mix.px-to-rem(50px);
+                @include mix.responsive-size(null, null, null);
+                grid-template-areas: 'title' 'image' 'about' 'skills';
+                grid-template-columns: 1fr;
+
+                .photoContainer {
+                    .profileImage {
+                        max-width: mix.px-to-rem(225px);
+                        max-height: mix.px-to-rem(325px);
+                    }
+
+                    &::before {
+                        max-width: mix.px-to-rem(225px);
+                        max-height: mix.px-to-rem(325px);
+                    }
+                }
+
+                .textContainer {
+                    padding-block-start: mix.px-to-rem(20px);
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('medium') {
+        .about {
+            .textContainer {
+                .textAboutMe {
+                    max-width: 100%;
+                }
+            }
+
+            .photoContainer {
+                .profileImage {
+                    max-width: mix.px-to-rem(175px);
+                    max-height: mix.px-to-rem(275px);
+                }
+
+                &::before {
+                    max-width: mix.px-to-rem(175px);
+                    max-height: mix.px-to-rem(275px);
+                }
+            }
+
+            .skills {
+                .stackContainer {
+                    flex-wrap: wrap;
+
+                    .skillImage {
+                        width: mix.px-to-rem(36px);
+                        height: mix.px-to-rem(36px);
+                    }
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('small') {
+        .about {
+            .photoContainer {
+                .profileImage {
+                    max-width: mix.px-to-rem(150px);
+                    max-height: mix.px-to-rem(250px);
+                }
+
+                &::before {
+                    max-width: mix.px-to-rem(150px);
+                    max-height: mix.px-to-rem(250px);
+                }
+            }
+
+            .textContainer {
+                padding-block-start: mix.px-to-rem(0px);
+
+                .textAboutMe {
+                    max-width: 100%;
+                    @include mix.responsive-size(16px, null, null);
+                }
+            }
+
+            .skills {
+                .stackContainer {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('xSmall') {
+        .contentProject {
+            .linkImage {
+                .imageProject {
+                }
+            }
+
+            .linksProject {
+                .iconProject {
+                    height: mix.px-to-rem(24px);
+                    width: mix.px-to-rem(24px);
+                }
+            }
+
+            .stackContainer {
+                .stackDetails {
+                    .techIcon {
+                        height: mix.px-to-rem(20px);
+                        width: mix.px-to-rem(20px);
+                    }
+                }
+            }
+        }
+    }
+}

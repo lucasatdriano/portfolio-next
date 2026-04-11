@@ -1,0 +1,91 @@
+@use 'sass:math';
+
+@use './variables' as vars;
+
+@mixin theme($theme, $background-type: 'main') {
+    @if $theme == light {
+        @if $background-type == 'main' {
+            background-color: vars.$light-background-main;
+        } @else if $background-type == 'accent' {
+            background-color: vars.$light-background-accent;
+        } @else if $background-type == 'header' {
+            background-color: vars.$light-background-header;
+        } @else if $background-type == 'hover' {
+            background-color: vars.$light-background-hover;
+        } @else if $background-type == 'font' {
+            background-color: vars.$light-background-font;
+        }
+        color: vars.$light-color;
+    } @else if $theme == dark {
+        @if $background-type == 'main' {
+            background-color: vars.$dark-background-main;
+        } @else if $background-type == 'accent' {
+            background-color: vars.$dark-background-accent;
+        } @else if $background-type == 'header' {
+            background-color: vars.$dark-background-header;
+        } @else if $background-type == 'hover' {
+            background-color: vars.$dark-background-hover;
+        } @else if $background-type == 'font' {
+            background-color: vars.$dark-background-font;
+        }
+        color: vars.$dark-color;
+    }
+}
+
+@function px-to-rem($px) {
+    @if $px != 0 {
+        @return math.div($px, vars.$base-font-size) * 1rem;
+    } @else {
+        @return 0;
+    }
+}
+
+@mixin responsive-size($font-size: null, $padding: null, $margin: null) {
+    @if $font-size {
+        font-size: clamp(
+            px-to-rem($font-size * 0.75),
+            2vw,
+            px-to-rem($font-size * 1.2)
+        );
+    }
+
+    @if $padding {
+        padding: px-to-rem($padding);
+    }
+
+    @if $margin {
+        margin: px-to-rem($margin);
+    }
+}
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == 'xSmall' {
+        @media (max-width: 400px) {
+            @content;
+        }
+    } @else if $breakpoint == 'small' {
+        @media (max-width: 600px) {
+            @content;
+        }
+    } @else if $breakpoint == 'medium' {
+        @media (max-width: 850px) {
+            @content;
+        }
+    } @else if $breakpoint == 'laptopSmall' {
+        @media (max-width: 1100px) {
+            @content;
+        }
+    } @else if $breakpoint == 'laptop' {
+        @media (max-width: 1280px) {
+            @content;
+        }
+    } @else if $breakpoint == 'wave' {
+        @media (max-width: 1350px) {
+            @content;
+        }
+    }
+}
+
+@mixin transition($property, $time: 0.3s, $ease: ease) {
+    transition: $property $time $ease;
+}

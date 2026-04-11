@@ -1,0 +1,39 @@
+@use '../../abstracts/variables' as vars;
+@use '../../abstracts/mixins' as mix;
+
+.theme {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: mix.px-to-rem(45px);
+    height: mix.px-to-rem(45px);
+    positio: relative;
+
+    .themeToggle {
+        opacity: 0;
+
+        &:focus + .iconSun,
+        &:focus ~ .iconMoon {
+            outline: 2px solid vars.$dark-color;
+            border-radius: 5px;
+        }
+    }
+
+    [class*='icon'] {
+        height: mix.px-to-rem(42px);
+        width: mix.px-to-rem(42px);
+        position: absolute;
+        @include mix.transition(transform, 0.3s);
+    }
+
+    .iconMoon {
+        transform: rotate(0deg) scale(0);
+    }
+
+    @include mix.respond-to('medium') {
+        [class*='icon'] {
+            height: mix.px-to-rem(32px);
+            width: mix.px-to-rem(32px);
+        }
+    }
+}

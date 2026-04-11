@@ -1,0 +1,124 @@
+@use '../../abstracts/variables' as vars;
+@use '../../abstracts/mixins' as mix;
+
+.languageContainer {
+    position: relative;
+
+    .btnLang {
+        @include mix.responsive-size(22px, 2.5px, null);
+        border: 1px solid vars.$dark-color;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: mix.px-to-rem(10px);
+        gap: mix.px-to-rem(10px);
+        cursor: pointer;
+        background: transparent;
+        color: inherit;
+        @include mix.transition(all, 0.3s);
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &.active {
+            .arrowLang {
+                transform: rotate(180deg);
+            }
+        }
+
+        .imgFlag {
+            width: auto;
+            height: mix.px-to-rem(24px);
+            object-fit: contain;
+        }
+
+        .language {
+            font-size: inherit;
+        }
+
+        .arrowLang {
+            @include mix.transition(transform);
+            font-size: mix.px-to-rem(18px);
+        }
+    }
+
+    .optionsLang {
+        position: absolute;
+        top: calc(100% + mix.px-to-rem(10px));
+        right: 0;
+        min-width: 180px;
+        background: vars.$dark-background-main;
+        @include mix.theme(dark, 'main');
+        border-radius: 8px;
+        box-shadow: 0 4px 20px vars.$color-shadow;
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        @include mix.transition(all, 0.3s);
+        z-index: 1000;
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .langs {
+            display: flex;
+            align-items: center;
+            padding: mix.px-to-rem(8px) mix.px-to-rem(12px);
+            cursor: pointer;
+            @include mix.transition(background, 0.2s);
+
+            &:hover {
+                @include mix.theme(dark, 'hover');
+            }
+
+            &.active {
+                @include mix.theme(dark, 'hover');
+            }
+
+            .langLink {
+                display: flex;
+                align-items: center;
+                gap: mix.px-to-rem(10px);
+                width: 100%;
+                text-decoration: none;
+                color: inherit;
+
+                .imgFlag {
+                    width: 24px;
+                    height: 16px;
+                    object-fit: cover;
+                }
+
+                .language {
+                    font-size: mix.px-to-rem(18px);
+                }
+            }
+        }
+    }
+
+    &.mobile {
+        .optionsLang {
+            position: fixed;
+            top: 265px;
+            bottom: auto;
+            right: 20px;
+            left: auto;
+            min-height: fit-content;
+        }
+    }
+}
+
+@include mix.respond-to('medium') {
+    .languageContainer {
+        .optionsLang {
+            right: -10px;
+        }
+    }
+}

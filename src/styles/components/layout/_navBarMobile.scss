@@ -1,0 +1,119 @@
+@use '../../abstracts/variables' as vars;
+@use '../../abstracts/mixins' as mix;
+
+.menuNavMobile {
+    display: none;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    padding-inline-end: mix.px-to-rem(44px);
+    gap: mix.px-to-rem(8px);
+
+    .navMobile {
+        position: relative;
+
+        .menuIcon,
+        .menuIcon::after,
+        .menuIcon::before {
+            content: '';
+            display: block;
+            cursor: pointer;
+            border-radius: 2em;
+            width: 1.75em;
+            height: calc(1.75em / 10);
+            position: absolute;
+            @include mix.theme(dark, 'font');
+            @include mix.transition(all, 0.2s, linear);
+        }
+
+        .menuIcon::after {
+            transform: translateY(calc(1.75em / 2.5));
+            top: -2px;
+        }
+
+        .menuIcon::before {
+            transform: translateY(calc(1.75em / -3));
+        }
+
+        &.visible .menuIcon {
+            background-color: transparent;
+        }
+
+        &.visible .menuIcon::after {
+            transform: rotate(135deg);
+            transition-delay: 0.1s;
+        }
+
+        &.visible .menuIcon::before {
+            transform: rotate(-135deg);
+            transition-delay: 0.1s;
+            top: -2px;
+        }
+
+        &.visible .navContainer {
+            height: 190px;
+            opacity: 1;
+        }
+
+        .navContainer {
+            @include mix.theme(dark, 'main');
+            height: 0px;
+            box-shadow: 0 2px 15px vars.$color-shadow;
+            border-radius: 5px;
+            position: absolute;
+            right: -50px;
+            top: 40px;
+            @include mix.responsive-size(null, 6px, null);
+            opacity: 0;
+            overflow: hidden;
+            transition:
+                opacity 0.5s ease,
+                height 0.5s ease;
+
+            .navItem {
+                @include mix.responsive-size(32px, 4px, null);
+
+                .link {
+                    position: relative;
+                    font-family: vars.$font-family-title;
+
+                    &::after {
+                        content: '';
+                        background: vars.$color-details;
+                        width: 100%;
+                        height: 2.5px;
+                        position: absolute;
+                        bottom: mix.px-to-rem(-5px);
+                        left: 0;
+                        transform: scaleX(0);
+                        transform-origin: bottom right;
+                        @include mix.transition(transform, 0.3s);
+                    }
+
+                    &:hover::after {
+                        transform: scaleX(1);
+                        transform-origin: bottom left;
+                    }
+
+                    &.active {
+                        font-weight: bold;
+                        background: vars.$color-details;
+                        -webkit-text-fill-color: transparent;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                    }
+                }
+            }
+
+            .languageMenuItem {
+                margin-block-start: mix.px-to-rem(18px);
+            }
+        }
+    }
+}
+
+@include mix.respond-to('medium') {
+    .menuNavMobile {
+        display: flex;
+    }
+}

@@ -1,0 +1,68 @@
+@use '../../abstracts/variables' as vars;
+@use '../../abstracts/mixins' as mix;
+
+main {
+    .buttonContainer {
+        cursor: pointer;
+        height: mix.px-to-rem(65px);
+        width: mix.px-to-rem(65px);
+        position: fixed;
+        bottom: mix.px-to-rem(25px);
+        right: mix.px-to-rem(25px);
+        @include mix.theme(dark, 'main');
+        box-shadow: 0 0 20px vars.$color-shadow;
+        @include mix.responsive-size(32px, null, null);
+        border-radius: 50%;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100px);
+        transition:
+            opacity 0.5s ease,
+            transform 0.5s ease,
+            visibility 0.5s ease;
+
+        &:hover {
+            animation: bounce 1.5s infinite;
+        }
+
+        &.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        &.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(100px);
+        }
+
+        .buttonToTop {
+            display: grid;
+            @include mix.theme(dark, 'main');
+            outline: none;
+            @include mix.responsive-size(32px, 24px, null);
+            border: 2px solid vars.$dark-background-accent;
+            place-content: center;
+            height: mix.px-to-rem(65px);
+            width: mix.px-to-rem(65px);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+
+    @include mix.respond-to('medium') {
+        .buttonContainer {
+            height: mix.px-to-rem(55px);
+            width: mix.px-to-rem(55px);
+            bottom: mix.px-to-rem(15px);
+            right: mix.px-to-rem(15px);
+
+            .buttonToTop {
+                height: mix.px-to-rem(55px);
+                width: mix.px-to-rem(55px);
+            }
+        }
+    }
+}

@@ -1,0 +1,257 @@
+@use '../../abstracts/variables' as vars;
+@use '../../abstracts/mixins' as mix;
+
+.projectContainer {
+    @include mix.theme(dark);
+    display: flex;
+    place-content: center;
+    padding-block: mix.px-to-rem(10px);
+
+    &:nth-child(even) {
+        .contentProject {
+            grid-template-areas:
+                'title    title       image   '
+                'description description image'
+                'stack    links       image   ';
+
+            .linksProject {
+                justify-content: end;
+                flex-direction: row-reverse;
+            }
+
+            .stackContainer {
+                place-self: start;
+                place-items: start;
+            }
+        }
+    }
+
+    .contentProject {
+        display: grid;
+        max-width: 75%;
+        grid-template-areas:
+            'image    title       title   '
+            'image description description'
+            'image    links       stack   ';
+
+        .titleProject {
+            grid-area: title;
+            place-self: center;
+            @include mix.responsive-size(30px, null, null);
+        }
+
+        .linkImage {
+            grid-area: image;
+            display: grid;
+            place-self: center;
+            margin-inline: mix.px-to-rem(10px);
+            width: fit-content;
+            height: max-content;
+
+            .imageProject {
+                height: fit-content;
+                width: mix.px-to-rem(450px);
+                border-radius: 5px;
+                object-fit: contain;
+            }
+        }
+
+        .descriptionProject {
+            grid-area: description;
+            @include mix.responsive-size(16px, 10px, null);
+            margin-block-start: mix.px-to-rem(-5px);
+        }
+
+        .stackContainer {
+            grid-area: stack;
+            justify-self: end;
+            width: 100%;
+            display: grid;
+            justify-items: end;
+            gap: mix.px-to-rem(5px);
+            font-family: vars.$font-family-title;
+            @include mix.responsive-size(22px, null, null);
+            padding-inline: mix.px-to-rem(10px);
+
+            .stacks {
+                width: fit-content;
+            }
+
+            .stackDetails {
+                display: flex;
+                gap: mix.px-to-rem(15px);
+                width: fit-content;
+
+                .techIcon {
+                    height: mix.px-to-rem(36px);
+                    width: mix.px-to-rem(36px);
+                }
+            }
+        }
+
+        .linksProject {
+            grid-area: links;
+            width: 100%;
+            place-self: start;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: mix.px-to-rem(15px);
+            @include mix.responsive-size(null, 15px, null);
+
+            .iconProject {
+                height: mix.px-to-rem(36px);
+                width: mix.px-to-rem(36px);
+            }
+        }
+    }
+
+    @include mix.respond-to('laptop') {
+        &:nth-child(even) {
+            .contentProject {
+                grid-template-areas:
+                    'image       image       image'
+                    'title       title       title'
+                    'description description description'
+                    'links       stack       stack';
+
+                .linksProject {
+                    flex-direction: row;
+                    justify-content: start;
+                }
+
+                .stackContainer {
+                    place-items: end;
+                }
+            }
+        }
+
+        .contentProject {
+            grid-template-areas:
+                'image       image       image'
+                'title       title       title'
+                'description description description'
+                'links       stack       stack';
+
+            .titleProject {
+                @include mix.responsive-size(36px, null, null);
+            }
+
+            .linkImage {
+                text-align: center;
+
+                .imageProject {
+                    width: mix.px-to-rem(450px);
+                }
+            }
+
+            .descriptionProject {
+                text-align: center;
+                @include mix.responsive-size(14px, 10px, null);
+            }
+
+            .linksProject {
+                height: 100%;
+            }
+
+            .stackContainer {
+                .stackContainer {
+                    .stackDetails {
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('medium') {
+        .contentProject {
+            max-width: 80%;
+
+            .linkImage {
+                .imageProject {
+                    width: mix.px-to-rem(400px);
+                }
+            }
+
+            .titleProject {
+                @include mix.responsive-size(28px, null, null);
+            }
+
+            .linksProject {
+                gap: mix.px-to-rem(10px);
+                @include mix.responsive-size(null, 5px, null);
+
+                .iconProject {
+                    height: mix.px-to-rem(32px);
+                    width: mix.px-to-rem(32px);
+                }
+            }
+
+            .stackContainer {
+                .stackDetails {
+                    .techIcon {
+                        height: mix.px-to-rem(28px);
+                        width: mix.px-to-rem(28px);
+                    }
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('small') {
+        .contentProject {
+            max-width: 80%;
+
+            .linkImage {
+                .imageProject {
+                    width: mix.px-to-rem(300px);
+                }
+            }
+
+            .titleProject {
+                @include mix.responsive-size(28px, null, null);
+            }
+
+            .linksProject {
+                gap: mix.px-to-rem(10px);
+                @include mix.responsive-size(null, 5px, null);
+            }
+
+            .stackContainer {
+                .stackDetails {
+                    .techIcon {
+                        height: mix.px-to-rem(28px);
+                        width: mix.px-to-rem(28px);
+                    }
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('xSmall') {
+        .contentProject {
+            .linkImage {
+                .imageProject {
+                    width: mix.px-to-rem(250px);
+                }
+            }
+
+            .linksProject {
+                .iconProject {
+                    height: mix.px-to-rem(24px);
+                    width: mix.px-to-rem(24px);
+                }
+            }
+
+            .stackContainer {
+                .stackDetails {
+                    .techIcon {
+                        height: mix.px-to-rem(20px);
+                        width: mix.px-to-rem(20px);
+                    }
+                }
+            }
+        }
+    }
+}

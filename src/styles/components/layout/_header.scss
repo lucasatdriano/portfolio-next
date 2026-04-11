@@ -1,0 +1,49 @@
+@use '../../abstracts/variables' as vars;
+@use '../../abstracts/mixins' as mix;
+
+header {
+    @include mix.theme(dark, 'header');
+    width: 100vw;
+    height: auto;
+    padding-inline: mix.px-to-rem(24px);
+    box-shadow: 4px 4px 10px vars.$color-shadow;
+    position: fixed;
+    z-index: 999;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -webkit-user-select: none;
+    user-select: none;
+    @include mix.responsive-size(24px, null, null);
+
+    .menu {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            white-space: nowrap;
+            @include mix.responsive-size(32px, 16px, null);
+
+            &::before {
+                content: '<Lucas Adriano/>';
+            }
+        }
+
+        @include mix.respond-to('medium') {
+            .logo {
+                @include mix.responsive-size(36px, 8px, null);
+            }
+        }
+
+        @include mix.respond-to('small') {
+            .logo {
+                @include mix.responsive-size(36px, null, null);
+
+                &::before {
+                    content: '<LA/>';
+                }
+            }
+        }
+    }
+}

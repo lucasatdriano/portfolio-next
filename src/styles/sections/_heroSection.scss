@@ -1,0 +1,169 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.hero {
+    display: flex;
+    gap: mix.px-to-rem(20px);
+    flex-direction: column;
+    justify-content: space-around;
+    height: 120svh;
+
+    .containerHero {
+        padding-block-start: mix.px-to-rem(180px);
+        display: grid;
+
+        .heroText {
+            display: grid;
+            place-content: center;
+            width: 100%;
+
+            .heroTitle {
+                -webkit-user-select: none;
+                user-select: none;
+                line-height: 0.9;
+                @include mix.responsive-size(32px, null, null);
+
+                .titleSpan {
+                    font-family: vars.$font-family-title;
+                    @include mix.responsive-size(96px, null, null);
+
+                    &::after {
+                        content: '|';
+                        margin-inline-start: mix.px-to-rem(3px);
+                        opacity: 1;
+                        will-change: filter;
+                        animation: caret 0.7s infinite;
+                    }
+                }
+            }
+
+            .heroSubTitle {
+                @include mix.responsive-size(40px, null, null);
+                font-family: vars.$font-family-logo;
+                text-indent: 16px;
+            }
+        }
+
+        .heroDetails {
+            display: flex;
+            place-self: center;
+            align-items: center;
+            width: 80vw;
+            margin-block-start: mix.px-to-rem(24px);
+            gap: mix.px-to-rem(24px);
+
+            .heroLine {
+                width: 100%;
+                height: mix.px-to-rem(3px);
+                border: none;
+                @include mix.theme(dark, 'font');
+            }
+
+            .linksContainer {
+                display: flex;
+                align-items: center;
+                gap: mix.px-to-rem(24px);
+
+                .iconLink {
+                    height: mix.px-to-rem(36px);
+                    width: mix.px-to-rem(36px);
+                }
+            }
+
+            .circlesContainer {
+                display: flex;
+                gap: mix.px-to-rem(16px);
+
+                .iconCircle {
+                    height: mix.px-to-rem(16px);
+                    width: mix.px-to-rem(16px);
+                }
+            }
+        }
+    }
+
+    .scroll {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        will-change: transform;
+        animation: bounce 3s infinite;
+        position: relative;
+        top: mix.px-to-rem(-60px);
+
+        .scrollText {
+            -webkit-user-select: none;
+            user-select: none;
+            text-align: center;
+            margin-block: mix.px-to-rem(-2.5px);
+        }
+    }
+
+    @include mix.respond-to('medium') {
+        .containerHero {
+            .heroDetails {
+                gap: mix.px-to-rem(16px);
+
+                .linksContainer {
+                    gap: mix.px-to-rem(20px);
+
+                    .iconLink {
+                        height: mix.px-to-rem(32px);
+                        width: mix.px-to-rem(32px);
+                    }
+                }
+
+                .circlesContainer {
+                    gap: mix.px-to-rem(12px);
+
+                    .iconCircle {
+                        height: mix.px-to-rem(12px);
+                        width: mix.px-to-rem(12px);
+                    }
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('small') {
+        .containerHero {
+            padding-block-start: mix.px-to-rem(96px);
+
+            .heroText {
+                .heroTitle {
+                    @include mix.responsive-size(26px, null, null);
+
+                    .titleSpan {
+                        @include mix.responsive-size(72px, null, null);
+                    }
+                }
+
+                .heroSubTitle {
+                    @include mix.responsive-size(28px, null, null);
+                }
+            }
+
+            .heroDetails {
+                gap: mix.px-to-rem(12px);
+
+                .linksContainer {
+                    gap: mix.px-to-rem(12px);
+
+                    .iconLink {
+                        height: mix.px-to-rem(28px);
+                        width: mix.px-to-rem(28px);
+                    }
+                }
+
+                .circlesContainer {
+                    gap: mix.px-to-rem(8px);
+
+                    .iconCircle {
+                        height: mix.px-to-rem(10px);
+                        width: mix.px-to-rem(10px);
+                    }
+                }
+            }
+        }
+    }
+}

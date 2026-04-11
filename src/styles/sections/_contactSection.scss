@@ -1,0 +1,146 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.contact {
+    @include mix.theme(dark, 'accent');
+    scroll-margin-block-start: 5svh;
+    padding-block-start: mix.px-to-rem(50px);
+    display: grid;
+    place-content: center;
+
+    .contactContainer {
+        display: flex;
+        gap: mix.px-to-rem(40px);
+
+        .contactItem {
+            position: relative;
+            width: mix.px-to-rem(75px);
+            height: mix.px-to-rem(75px);
+            border-radius: 60px;
+            @include mix.theme(dark);
+            box-shadow: 0 0 15px vars.$color-shadow;
+            @include mix.transition(width, 0.3s);
+
+            &:hover {
+                width: mix.px-to-rem(180px);
+            }
+
+            .linkContact {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 60px;
+                @include mix.transition(width, 0.5s);
+
+                .textContact {
+                    font-family: vars.$font-family-title;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                    z-index: 200;
+
+                    @include mix.responsive-size(20px, null, null);
+                }
+
+                .iconContact {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 1;
+                    @include mix.transition(opacity, 0.5s);
+                    height: mix.px-to-rem(42px);
+                    width: mix.px-to-rem(42px);
+                }
+
+                &:hover {
+                    width: 100%;
+
+                    .iconContact {
+                        opacity: 0;
+                    }
+
+                    .textContact {
+                        opacity: 1;
+                        @include mix.transition(opacity, 0.5s);
+                        transition-delay: 0.2s;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('wave') {
+        .contactContainer {
+            .contactItem {
+                width: mix.px-to-rem(65px);
+                height: mix.px-to-rem(65px);
+
+                .linkContact {
+                    .iconContact {
+                        height: mix.px-to-rem(38px);
+                        width: mix.px-to-rem(38px);
+                    }
+
+                    .textContact {
+                        @include mix.responsive-size(22px, null, null);
+                    }
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('medium') {
+        .contactContainer {
+            gap: mix.px-to-rem(25px);
+
+            .contactItem {
+                &:hover {
+                    width: mix.px-to-rem(120px);
+                }
+
+                .linkContact {
+                    .iconContact {
+                        height: mix.px-to-rem(36px);
+                        width: mix.px-to-rem(36px);
+                    }
+
+                    .textContact {
+                        @include mix.responsive-size(26px, null, null);
+                    }
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('small') {
+        .contactContainer {
+            gap: mix.px-to-rem(15px);
+
+            .contactItem {
+                width: mix.px-to-rem(55px);
+                height: mix.px-to-rem(55px);
+
+                &:hover {
+                    width: mix.px-to-rem(100px);
+                }
+
+                .linkContact {
+                    .iconContact {
+                        height: mix.px-to-rem(32px);
+                        width: mix.px-to-rem(32px);
+                    }
+
+                    .textContact {
+                        @include mix.responsive-size(20px, null, null);
+                    }
+                }
+            }
+        }
+    }
+}

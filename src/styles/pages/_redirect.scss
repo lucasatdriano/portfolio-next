@@ -1,0 +1,66 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.loadingContainer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include mix.theme(dark, 'main');
+
+    .logoContainer {
+        margin-block-end: mix.px-to-rem(24px);
+
+        .logo {
+            @include mix.responsive-size(32px, 16px, null);
+
+            &::before {
+                content: '<Lucas Adriano/>';
+            }
+        }
+    }
+
+    .loadingContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: mix.px-to-rem(24px);
+        text-align: center;
+
+        .loadingMessage {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .loadingDotsContainer {
+            display: flex;
+            justify-content: center;
+            gap: mix.px-to-rem(20px);
+            padding: mix.px-to-rem(24px);
+            opacity: 0.5;
+
+            .loadingDots {
+                width: mix.px-to-rem(8px);
+                height: mix.px-to-rem(8px);
+                border-radius: 50%;
+                background: vars.$color-primary;
+                animation: bounce 1.5s ease-in-out infinite;
+
+                &:nth-child(1) {
+                    animation-delay: 0s;
+                }
+                &:nth-child(2) {
+                    animation-delay: 0.2s;
+                }
+                &:nth-child(3) {
+                    animation-delay: 0.4s;
+                }
+            }
+        }
+
+        .loadingRedirectText {
+            @include mix.responsive-size(14px, 10px, null);
+        }
+    }
+}

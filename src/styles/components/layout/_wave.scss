@@ -1,0 +1,75 @@
+@use '../../abstracts/variables' as vars;
+@use '../../abstracts/mixins' as mix;
+
+.waveContainer {
+    position: relative;
+    overflow: visible;
+    z-index: 100;
+    height: mix.px-to-rem(150px);
+    margin-block-start: mix.px-to-rem(-50px);
+
+    .parallaxWave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: auto;
+        min-height: 375px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: top center;
+
+        &.numberOne {
+            background-image: url('/images/decorationsImages/waveDarkOne.svg');
+            z-index: 1;
+            bottom: -20px;
+            left: 120px;
+        }
+
+        &.numberTwo {
+            background-image: url('/images/decorationsImages/waveDarkTwo.svg');
+            z-index: 2;
+            bottom: -40px;
+        }
+    }
+
+    @include mix.respond-to('wave') {
+        .parallaxWave {
+            width: 160vw;
+
+            &.numberOne {
+                margin-inline-start: mix.px-to-rem(-325px);
+            }
+        }
+    }
+
+    @include mix.respond-to('medium') {
+        .parallaxWave {
+            width: 200vw;
+
+            &.numberOne {
+                bottom: -40px;
+            }
+
+            &.numberTwo {
+                bottom: -60px;
+            }
+        }
+    }
+    @include mix.respond-to('small') {
+        .parallaxWave {
+            width: 250vw;
+
+            &.numberOne {
+                bottom: -100px;
+                left: 50px;
+            }
+
+            &.numberTwo {
+                bottom: -120px;
+                left: -180px;
+            }
+        }
+    }
+}

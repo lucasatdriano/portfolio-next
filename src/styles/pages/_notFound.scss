@@ -1,0 +1,90 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.notFoundContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    @include mix.theme(dark, 'main');
+    padding: mix.px-to-rem(24px);
+
+    .notFoundCodeWrapper {
+        font-family: vars.$font-family-logo;
+        font-size: mix.px-to-rem(120px);
+        font-weight: 600;
+        margin-bottom: mix.px-to-rem(24px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: mix.px-to-rem(16px);
+
+        @include mix.respond-to('small') {
+            font-size: mix.px-to-rem(80px);
+            gap: mix.px-to-rem(8px);
+        }
+    }
+
+    .notFoundCodeBracket {
+        color: vars.$color-primary;
+        text-shadow: 0 0 10px vars.$color-shadow-primary;
+        animation: glow 2.5s ease-in-out infinite;
+    }
+
+    .notFoundCodeNumber {
+        color: vars.$color-primary;
+        text-shadow: 0 0 10px vars.$color-shadow-primary;
+        animation: glow 2.5s ease-in-out infinite;
+    }
+
+    .notFoundTitle {
+        font-size: mix.px-to-rem(32px);
+        font-weight: 600;
+        margin-bottom: mix.px-to-rem(16px);
+
+        @include mix.respond-to('small') {
+            font-size: mix.px-to-rem(24px);
+        }
+    }
+
+    .notFoundMessage {
+        font-size: mix.px-to-rem(18px);
+        opacity: 0.8;
+        margin-bottom: mix.px-to-rem(32px);
+
+        @include mix.respond-to('small') {
+            font-size: mix.px-to-rem(16px);
+        }
+    }
+
+    .notFoundActions {
+        display: flex;
+        gap: mix.px-to-rem(16px);
+        justify-content: center;
+        margin-bottom: mix.px-to-rem(48px);
+
+        @include mix.respond-to('small') {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .notFoundButton {
+        display: flex;
+        align-items: center;
+        gap: mix.px-to-rem(8px);
+        padding: mix.px-to-rem(12px) mix.px-to-rem(24px);
+        border-radius: 8px;
+        font-size: mix.px-to-rem(16px);
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        border: none;
+        background: vars.$color-details;
+        color: vars.$dark-color;
+    }
+}

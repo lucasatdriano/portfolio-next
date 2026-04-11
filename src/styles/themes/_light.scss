@@ -1,0 +1,167 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.light {
+    @include mix.theme(light);
+
+    body {
+        @include mix.theme(light);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        @include mix.theme(light);
+    }
+
+    *::-webkit-scrollbar {
+        @include mix.theme(light, 'accent');
+    }
+
+    .glow-cursor {
+        background: radial-gradient(
+            circle,
+            vars.$color-shadow-secondary 0%,
+            transparent 70%
+        );
+    }
+
+    a {
+        color: vars.$light-color;
+    }
+
+    .title {
+        &::after {
+            @include mix.theme(light, 'font');
+        }
+    }
+
+    .tooltip {
+        .tooltipText {
+            @include mix.theme(light, 'hover');
+        }
+    }
+
+    .loadingContainer {
+        @include mix.theme(light, 'main');
+    }
+
+    .notFoundContainer {
+        @include mix.theme(light, 'main');
+    }
+
+    header {
+        @include mix.theme(light, 'header');
+
+        .menuNavMobile {
+            .navMobile {
+                &.visible .menuIcon {
+                    background-color: transparent;
+                }
+
+                .menuIcon,
+                .menuIcon::after,
+                .menuIcon::before {
+                    background-color: vars.$light-background-font;
+                }
+
+                .navContainer {
+                    @include mix.theme(light, 'main');
+                }
+            }
+        }
+
+        .btnLang {
+            border: 1px solid vars.$light-color;
+            color: vars.$light-color;
+        }
+
+        .themeToggle {
+            &:focus + .iconSun,
+            &:focus ~ .iconMoon {
+                outline: 2px solid vars.$light-color;
+            }
+        }
+
+        .iconSun {
+            transform: rotate(360deg) scale(0);
+        }
+
+        .iconMoon {
+            transform: rotate(360deg) scale(1);
+        }
+
+        .settings {
+            .languageContainer {
+                .optionsLang {
+                    @include mix.theme(light, 'main');
+
+                    .langs {
+                        &:hover {
+                            @include mix.theme(light, 'hover');
+                        }
+
+                        &.active {
+                            @include mix.theme(light, 'hover');
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        .buttonContainer {
+            @include mix.theme(light, 'main');
+
+            .buttonToTop {
+                border: 2px solid vars.$light-background-accent;
+                @include mix.theme(light, 'main');
+            }
+        }
+
+        .hero {
+            .containerHero {
+                .heroDetails {
+                    .heroLine {
+                        @include mix.theme(light, 'font');
+                    }
+                }
+            }
+        }
+
+        .waveContainer {
+            .numberOne {
+                background-image: url('/images/decorationsImages/waveLightOne.svg');
+            }
+
+            .numberTwo {
+                background-image: url('/images/decorationsImages/waveLightTwo.svg');
+            }
+        }
+
+        .profileContainer {
+            @include mix.theme(light, 'accent');
+        }
+
+        .projects {
+            @include mix.theme(light, 'accent');
+
+            .projectContainer {
+                @include mix.theme(light);
+            }
+        }
+
+        .contact {
+            @include mix.theme(light, 'accent');
+
+            .contactContainer {
+                .contactItem {
+                    @include mix.theme(light);
+                }
+            }
+        }
+    }
+
+    footer {
+        @include mix.theme(light, 'accent');
+    }
+}

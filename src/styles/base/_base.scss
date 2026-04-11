@@ -1,0 +1,101 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+* {
+    @include mix.responsive-size(null, 0, 0);
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: vars.$font-family-body;
+    font-size: vars.$base-font-size;
+    line-height: 1.6;
+    position: relative;
+    @include mix.theme(dark);
+}
+
+.glow-cursor {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        vars.$color-shadow-primary 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.05s ease-out;
+    will-change: left, top;
+}
+
+h1,
+h2,
+h3 {
+    font-family: vars.$font-family-title;
+}
+
+ul,
+summary {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: vars.$dark-color;
+}
+
+.logo {
+    font-family: vars.$font-family-logo;
+}
+
+*::-webkit-scrollbar-thumb {
+    @include mix.theme(dark);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar {
+    width: mix.px-to-rem(10px);
+    @include mix.theme(dark, 'accent');
+}
+
+.title {
+    @include mix.responsive-size(42px, null, null);
+    place-self: center;
+    margin-block-end: mix.px-to-rem(24px);
+    position: relative;
+    width: max-content;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: mix.px-to-rem(5px);
+        border-radius: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: mix.px-to-rem(3px);
+        @include mix.theme(dark, 'font');
+    }
+}
+
+.spanColor {
+    background: vars.$color-details;
+    font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@include mix.respond-to('small') {
+    .title {
+        @include mix.responsive-size(36px, null, null);
+    }
+}

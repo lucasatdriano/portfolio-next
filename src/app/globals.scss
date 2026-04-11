@@ -1,0 +1,28 @@
+@use '../styles/base/base';
+
+@use '../styles/abstracts/variables';
+@use '../styles/abstracts/mixins';
+
+@use '../styles/animations/animations';
+
+@use '../styles/components/layout/header.scss';
+@use '../styles/components/layout/navBarDesktop';
+@use '../styles/components/layout/navBarMobile';
+@use '../styles/components/layout/wave';
+@use '../styles/components/layout/footer';
+
+@use '../styles/components/ui/buttonToTop';
+@use '../styles/components/ui/cardProject';
+@use '../styles/components/ui/dropdownLanguage';
+@use '../styles/components/ui/toggleTheme';
+@use '../styles/components/ui/toolTip';
+
+@use '../styles/pages/notFound';
+@use '../styles/pages/redirect';
+
+@use '../styles/sections/contactSection';
+@use '../styles/sections/heroSection';
+@use '../styles/sections/profileSection';
+@use '../styles/sections/projectsSection';
+
+@use '../styles/themes/light';

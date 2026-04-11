@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.projects {
+    scroll-margin-block-start: 5svh;
+    padding-block-start: mix.px-to-rem(50px);
+    display: flex;
+    flex-direction: column;
+    gap: mix.px-to-rem(10px);
+    @include mix.theme(dark, 'accent');
+
+    @media (max-width: 1100px) {
+        & {
+            padding-block-start: mix.px-to-rem(25px);
+        }
+    }
+}

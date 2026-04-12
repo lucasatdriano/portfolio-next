@@ -45,12 +45,18 @@ export function useLanguage() {
         [currentLang, pathname, router],
     );
 
-    const t = useCallback(
-        (path: string) => {
-            return getTranslation(currentLang, path);
-        },
-        [currentLang],
-    );
+    // 🔥 SOLUÇÃO: Função com overloads
+    function t(path: string): string;
+    function t(path: string, options: { returnObjects: true }): unknown;
+    function t(path: string, options?: { returnObjects?: boolean }): unknown {
+        const translation = getTranslation(currentLang, path);
+
+        if (options?.returnObjects) {
+            return translation;
+        }
+
+        return typeof translation === 'string' ? translation : '';
+    }
 
     return {
         currentLang,

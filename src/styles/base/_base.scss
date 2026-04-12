@@ -22,8 +22,8 @@ body {
 
 .glow-cursor {
     position: fixed;
-    width: 300px;
-    height: 300px;
+    width: mix.px-to-rem(300px);
+    height: mix.px-to-rem(300px);
     border-radius: 50%;
     background: radial-gradient(
         circle,
@@ -32,7 +32,7 @@ body {
     );
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.05s ease-out;
+    @include mix.transition(transform, 0.05s, ease-out);
     will-change: left, top;
 }
 
@@ -62,6 +62,7 @@ a {
 }
 
 *::-webkit-scrollbar {
+    border-radius: 10px;
     width: mix.px-to-rem(10px);
     @include mix.theme(dark, 'accent');
 }

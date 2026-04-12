@@ -38,7 +38,7 @@ export default function ButtonToTop() {
                 className="buttonToTop"
                 aria-label={t('tooltips.backToTop')}
             >
-                <ArrowUpStroke size="md" />
+                <ArrowUpStroke className="buttonToTopIcon" />
             </button>
             <span className="tooltipText" role="tooltip">
                 {t('tooltips.backToTop')}

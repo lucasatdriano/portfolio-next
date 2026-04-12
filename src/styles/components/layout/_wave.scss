@@ -15,7 +15,7 @@
         display: block;
         width: 100%;
         height: auto;
-        min-height: 375px;
+        min-height: mix.px-to-rem(400px);
         background-size: 100% auto;
         background-repeat: no-repeat;
         background-position: top center;

@@ -6,7 +6,14 @@ export const profile = {
     photoAlt: 'Photo of Lucas Adriano',
     visit: 'My',
     text: {
-        part1: 'Hello! My name is <span class="spanColor">Lucas Adriano</span>, I am a programmer passionate about <span class="spanColor">technology</span> and <span class="spanColor">design</span>. I have been dedicating myself to specialize more and more in <span class="spanColor">front-end</span> development and <span class="spanColor">UX/UI</span>, thus creating dynamic and engaging user experiences. I am always looking to learn new languages and frameworks to <span class="spanColor">improve my skills</span>.',
-        part2: 'I have a degree in <span class="spanColor">Systems Analysis and Development</span>, and this experience helped me deepen my knowledge in <span class="spanColor">programming logic</span> and <span class="spanColor">best practices</span>. In addition to technical skills, I have developed competencies in <span class="spanColor">teamwork</span> and <span class="spanColor">receiving feedback</span>, which allows me to collaborate effectively with colleagues and better understand user <span class="spanColor">needs</span>. If you are interested in discussing how I can <span class="spanColor">add value</span> to your <span class="spanColor">team</span> or <span class="spanColor">project</span>, I would be happy to talk!',
+        part1: 'Hi! I’m <span class="spanColor">Lucas Adriano</span>, a Full-Stack Developer. I enjoy solving <span class="spanColor">real-world problems</span> using technology and turning ideas into practical systems.',
+
+        part2: 'I work with <span class="spanColor">TypeScript</span>, <span class="spanColor">Next.js</span>, and <span class="spanColor">Node.js</span>, building web applications and <span class="spanColor">process automation</span> solutions.',
+
+        part3: 'In recent projects, I reduced process time by over <span class="spanColor">60%</span> and increased team productivity by up to <span class="spanColor">40%</span>.',
+
+        part4: 'I have experience building full applications, including front-end, back-end, API integration, and database design.',
+
+        part5: 'My focus is to build efficient solutions, automate processes, and create real impact in users’ daily workflows.',
     },
 };

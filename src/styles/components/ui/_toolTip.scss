@@ -20,7 +20,6 @@
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
-        transition: 0.3s ease-in-out;
         @include mix.transition(null, 0.3s, ease-in-out);
     }
 

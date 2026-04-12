@@ -97,6 +97,11 @@
             text-align: center;
             margin-block: mix.px-to-rem(-2.5px);
         }
+
+        .scrollIcon {
+            height: mix.px-to-rem(48px);
+            width: mix.px-to-rem(48px);
+        }
     }
 
     @include mix.respond-to('medium') {
@@ -121,6 +126,13 @@
                         width: mix.px-to-rem(12px);
                     }
                 }
+            }
+        }
+
+        .scroll {
+            .scrollIcon {
+                height: mix.px-to-rem(38px);
+                width: mix.px-to-rem(38px);
             }
         }
     }

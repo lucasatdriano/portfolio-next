@@ -14,6 +14,7 @@ interface CardProjectProps {
     repoUrl: string;
     liveUrl: string;
     technologies: Technology[];
+    onCardClick?: () => void;
 }
 
 export default function CardProject({
@@ -23,33 +24,49 @@ export default function CardProject({
     repoUrl,
     liveUrl,
     technologies,
+    onCardClick,
 }: CardProjectProps) {
     const { t } = useLanguage();
 
+    const VISIBLE_ICONS = 5;
+    const visibleTechs = technologies.slice(0, VISIBLE_ICONS);
+    const hiddenCount = technologies.length - VISIBLE_ICONS;
+
+    // Função para lidar com clique no card inteiro
+    const handleCardClick = (e: React.MouseEvent) => {
+        // Se o clique foi em um link ou dentro de um link, não abre o modal
+        const target = e.target as HTMLElement;
+        if (target.closest('a') || target.closest('button')) {
+            return;
+        }
+        onCardClick?.();
+    };
+
     return (
-        <article className="projectContainer">
+        <article
+            className="projectContainer"
+            onClick={handleCardClick}
+            style={{ cursor: 'pointer' }}
+        >
             <div className="contentProject">
                 <h3 className="titleProject">{title}</h3>
-                <Link
-                    href={liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={t('tooltips.viewProject')}
-                    className="linkImage"
-                >
+
+                <div className="linkImage">
                     <Image
                         src={image}
                         alt={`${title} ${t('projects.forDesktop')}`}
                         width={800}
                         height={450}
                         className="imageProject"
-                        priority={false}
+                        loading="lazy"
                     />
-                </Link>
+                </div>
+
                 <p
                     className="descriptionProject"
                     dangerouslySetInnerHTML={{ __html: description }}
                 />
+
                 <div className="linksProject">
                     <ToolTip text={t('tooltips.viewRepo')}>
                         <Link
@@ -72,11 +89,14 @@ export default function CardProject({
                         </Link>
                     </ToolTip>
                 </div>
+
                 <div className="stackContainer">
                     <div className="stackContent">
-                        <h4 className="stacks">{t('projects.technologies')}</h4>
+                        <h4 className="stackTitle">
+                            {t('projects.technologies')}
+                        </h4>
                         <div className="stackDetails">
-                            {technologies.map((tech) => (
+                            {visibleTechs.map((tech) => (
                                 <ToolTip key={tech.name} text={tech.name}>
                                     <Link
                                         href={tech.url}
@@ -91,10 +111,21 @@ export default function CardProject({
                                             className="techIcon"
                                             width={24}
                                             height={24}
+                                            loading="lazy"
                                         />
                                     </Link>
                                 </ToolTip>
                             ))}
+
+                            {hiddenCount > 0 && (
+                                <ToolTip
+                                    text={`+ ${hiddenCount} ${t('projects.moreTechs')}`}
+                                >
+                                    <div className="moreTechs">
+                                        +{hiddenCount}
+                                    </div>
+                                </ToolTip>
+                            )}
                         </div>
                     </div>
                 </div>

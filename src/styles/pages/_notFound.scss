@@ -9,82 +9,103 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    @include mix.theme(dark, 'main');
+    @include mix.theme(dark);
     padding: mix.px-to-rem(24px);
 
     .notFoundCodeWrapper {
         font-family: vars.$font-family-logo;
-        font-size: mix.px-to-rem(120px);
+        @include mix.responsive-size(164px, null, null);
         font-weight: 600;
-        margin-bottom: mix.px-to-rem(24px);
+        margin-block-end: mix.px-to-rem(24px);
         display: flex;
         align-items: center;
         justify-content: center;
         gap: mix.px-to-rem(16px);
 
-        @include mix.respond-to('small') {
-            font-size: mix.px-to-rem(80px);
-            gap: mix.px-to-rem(8px);
+        .notFoundCodeBracket {
+            color: vars.$color-primary;
+            text-shadow: 0 0 10px vars.$color-shadow-primary;
+            animation: glow 2.5s ease-in-out infinite;
+        }
+
+        .notFoundCodeNumber {
+            color: vars.$color-primary;
+            text-shadow: 0 0 10px vars.$color-shadow-primary;
+            animation: glow 2.5s ease-in-out infinite;
         }
     }
 
-    .notFoundCodeBracket {
-        color: vars.$color-primary;
-        text-shadow: 0 0 10px vars.$color-shadow-primary;
-        animation: glow 2.5s ease-in-out infinite;
-    }
-
-    .notFoundCodeNumber {
-        color: vars.$color-primary;
-        text-shadow: 0 0 10px vars.$color-shadow-primary;
-        animation: glow 2.5s ease-in-out infinite;
-    }
-
     .notFoundTitle {
-        font-size: mix.px-to-rem(32px);
+        @include mix.responsive-size(28px, null, null);
         font-weight: 600;
-        margin-bottom: mix.px-to-rem(16px);
+        margin-block-end: mix.px-to-rem(16px);
 
         @include mix.respond-to('small') {
-            font-size: mix.px-to-rem(24px);
+            @include mix.responsive-size(32px, null, null);
         }
     }
 
     .notFoundMessage {
-        font-size: mix.px-to-rem(18px);
+        @include mix.responsive-size(14px, null, null);
         opacity: 0.8;
-        margin-bottom: mix.px-to-rem(32px);
-
-        @include mix.respond-to('small') {
-            font-size: mix.px-to-rem(16px);
-        }
+        margin-block-end: mix.px-to-rem(32px);
+        text-align: center;
     }
 
     .notFoundActions {
         display: flex;
         gap: mix.px-to-rem(16px);
         justify-content: center;
-        margin-bottom: mix.px-to-rem(48px);
+        margin-block-end: mix.px-to-rem(48px);
 
-        @include mix.respond-to('small') {
-            flex-direction: column;
+        .notFoundButton {
+            display: flex;
             align-items: center;
+            gap: mix.px-to-rem(8px);
+            padding: mix.px-to-rem(12px) mix.px-to-rem(24px);
+            border-radius: 8px;
+            @include mix.responsive-size(14px, null, null);
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            background: vars.$color-details;
+            color: vars.$dark-color;
+            @include mix.transition(all, 0.3s);
+
+            .notFoundIcon {
+                height: mix.px-to-rem(24px);
+                width: mix.px-to-rem(24px);
+            }
         }
     }
 
-    .notFoundButton {
-        display: flex;
-        align-items: center;
-        gap: mix.px-to-rem(8px);
-        padding: mix.px-to-rem(12px) mix.px-to-rem(24px);
-        border-radius: 8px;
-        font-size: mix.px-to-rem(16px);
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        border: none;
-        background: vars.$color-details;
-        color: vars.$dark-color;
+    @include mix.respond-to('small') {
+        .notFoundCodeWrapper {
+            @include mix.responsive-size(116px, null, null);
+            gap: mix.px-to-rem(8px);
+        }
+
+        .notFoundTitle {
+            @include mix.responsive-size(32px, null, null);
+        }
+
+        .notFoundMessage {
+            @include mix.responsive-size(18px, null, null);
+        }
+
+        .notFoundActions {
+            flex-direction: column;
+            align-items: center;
+
+            .notFoundButton {
+                @include mix.responsive-size(16px, null, null);
+
+                .notFoundIcon {
+                    height: mix.px-to-rem(20px);
+                    width: mix.px-to-rem(20px);
+                }
+            }
+        }
     }
 }

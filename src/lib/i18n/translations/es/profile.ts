@@ -6,7 +6,14 @@ export const profile = {
     photoAlt: 'Foto de Lucas Adriano',
     visit: 'Mi',
     text: {
-        part1: '¡Hola! Mi nombre es <span class="spanColor">Lucas Adriano</span>, soy un programador apasionado por la <span class="spanColor">tecnología</span> y el <span class="spanColor">diseño</span>. Me he estado dedicando a especializarme cada vez más en el desarrollo <span class="spanColor">front-end</span> y <span class="spanColor">UX/UI</span>, creando así experiencias de usuario dinámicas y atractivas. Siempre estoy buscando aprender nuevos lenguajes y frameworks para <span class="spanColor">mejorar mis habilidades</span>.',
-        part2: 'Soy <span class="spanColor">graduado</span> en <span class="spanColor">Análisis y Desarrollo de Sistemas</span>, y esta experiencia me ayudó a profundizar mi conocimiento en <span class="spanColor">lógica de programación</span> y <span class="spanColor">buenas prácticas</span>. Además de las habilidades técnicas, he desarrollado competencias en <span class="spanColor">trabajo en equipo</span> y <span class="spanColor">recibir comentarios</span>, lo que me permite colaborar eficazmente con colegas y comprender mejor las <span class="spanColor">necesidades</span> de los usuarios. Si estás interesado en discutir cómo puedo <span class="spanColor">agregar valor</span> a tu <span class="spanColor">equipo</span> o <span class="spanColor">proyecto</span>, ¡estaré encantado de conversar!',
+        part1: '¡Hola! Soy <span class="spanColor">Lucas Adriano</span>, desarrollador Full-Stack. Me gusta resolver <span class="spanColor">problemas reales</span> utilizando tecnología y transformar ideas en sistemas funcionales.',
+
+        part2: 'Trabajo con <span class="spanColor">TypeScript</span>, <span class="spanColor">Next.js</span> y <span class="spanColor">Node.js</span>, desarrollando aplicaciones web y soluciones de <span class="spanColor">automatización de procesos</span>.',
+
+        part3: 'En proyectos recientes, desarrollé sistemas que redujeron el tiempo de ejecución en más de <span class="spanColor">60%</span> y aumentaron la productividad de equipos en hasta <span class="spanColor">40%</span>.',
+
+        part4: 'Tengo experiencia en el desarrollo completo de aplicaciones, incluyendo front-end, back-end, integración de APIs y modelado de bases de datos.',
+
+        part5: 'Mi enfoque es desarrollar soluciones eficientes, automatizar procesos y generar un impacto real en el día a día de los usuarios.',
     },
 };

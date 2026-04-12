@@ -108,7 +108,7 @@ export default function HeroSection() {
                 <p className="scrollText" aria-hidden="true">
                     L
                 </p>
-                <ChevronsDown aria-hidden="true" size="lg" />
+                <ChevronsDown className="scrollIcon" aria-hidden="true" />
             </div>
             <Wave />
         </section>

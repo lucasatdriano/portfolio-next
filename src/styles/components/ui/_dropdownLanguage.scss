@@ -11,7 +11,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-inline: mix.px-to-rem(10px);
+        padding: mix.px-to-rem(6px) mix.px-to-rem(10px);
         gap: mix.px-to-rem(10px);
         cursor: pointer;
         background: transparent;
@@ -28,19 +28,20 @@
             }
         }
 
-        .imgFlag {
-            width: auto;
+        .imageFlag {
             height: mix.px-to-rem(24px);
+            width: mix.px-to-rem(24px);
             object-fit: contain;
         }
 
         .language {
-            font-size: inherit;
+            @include mix.responsive-size(18px, null, null);
         }
 
         .arrowLang {
             @include mix.transition(transform);
-            font-size: mix.px-to-rem(18px);
+            height: mix.px-to-rem(24px);
+            width: mix.px-to-rem(24px);
         }
     }
 
@@ -48,9 +49,9 @@
         position: absolute;
         top: calc(100% + mix.px-to-rem(10px));
         right: 0;
-        min-width: 180px;
+        min-width: mix.px-to-rem(180px);
         background: vars.$dark-background-main;
-        @include mix.theme(dark, 'main');
+        @include mix.theme(dark);
         border-radius: 8px;
         box-shadow: 0 4px 20px vars.$color-shadow;
         backdrop-filter: blur(10px);
@@ -90,14 +91,14 @@
                 text-decoration: none;
                 color: inherit;
 
-                .imgFlag {
-                    width: 24px;
-                    height: 16px;
+                .imageFlag {
+                    width: mix.px-to-rem(22px);
+                    height: mix.px-to-rem(22px);
                     object-fit: cover;
                 }
 
                 .language {
-                    font-size: mix.px-to-rem(18px);
+                    @include mix.responsive-size(14px, null, null);
                 }
             }
         }
@@ -119,6 +120,26 @@
     .languageContainer {
         .optionsLang {
             right: -10px;
+        }
+    }
+}
+
+@include mix.respond-to('small') {
+    .languageContainer {
+        .btnLang {
+            .language {
+                @include mix.responsive-size(20px, null, null);
+            }
+        }
+
+        .optionsLang {
+            .langs {
+                .langLink {
+                    .language {
+                        @include mix.responsive-size(16px, null, null);
+                    }
+                }
+            }
         }
     }
 }

@@ -29,15 +29,49 @@ export interface TranslationKeys {
         text: {
             part1: string;
             part2: string;
+            part3: string;
+            part4: string;
+            part5: string;
         };
     };
     projects: {
         title: string;
         technologies: string;
         forDesktop: string;
-        descriptions: {
+        cardDescriptions: {
             lemnos: string;
             alphaSpeed: string;
+        };
+        modal: {
+            featuresTitle: string;
+            challengesTitle: string;
+            learningsTitle: string;
+            fullDescription: {
+                lemnos: {
+                    introduction: string;
+                    development: string;
+                    architecture: string;
+                    conclusion: string;
+                };
+                alphaSpeed: {
+                    introduction: string;
+                    development: string;
+                    architecture: string;
+                    conclusion: string;
+                };
+            };
+            features: {
+                lemnos: string[];
+                alphaSpeed: string[];
+            };
+            challenges: {
+                lemnos: string;
+                alphaSpeed: string;
+            };
+            learnings: {
+                lemnos: string;
+                alphaSpeed: string;
+            };
         };
     };
     contact: {

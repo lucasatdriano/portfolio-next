@@ -4,14 +4,13 @@
 main {
     .buttonContainer {
         cursor: pointer;
-        height: mix.px-to-rem(65px);
-        width: mix.px-to-rem(65px);
+        height: mix.px-to-rem(60px);
+        width: mix.px-to-rem(60px);
         position: fixed;
-        bottom: mix.px-to-rem(25px);
-        right: mix.px-to-rem(25px);
-        @include mix.theme(dark, 'main');
+        bottom: mix.px-to-rem(20px);
+        right: mix.px-to-rem(20px);
+        @include mix.theme(dark);
         box-shadow: 0 0 20px vars.$color-shadow;
-        @include mix.responsive-size(32px, null, null);
         border-radius: 50%;
         z-index: 999;
         opacity: 0;
@@ -40,15 +39,19 @@ main {
 
         .buttonToTop {
             display: grid;
-            @include mix.theme(dark, 'main');
+            @include mix.theme(dark);
             outline: none;
-            @include mix.responsive-size(32px, 24px, null);
             border: 2px solid vars.$dark-background-accent;
             place-content: center;
-            height: mix.px-to-rem(65px);
-            width: mix.px-to-rem(65px);
+            height: mix.px-to-rem(60px);
+            width: mix.px-to-rem(60px);
             border-radius: 50%;
             cursor: pointer;
+
+            .buttonToTopIcon {
+                height: mix.px-to-rem(32px);
+                width: mix.px-to-rem(32px);
+            }
         }
     }
 
@@ -62,6 +65,28 @@ main {
             .buttonToTop {
                 height: mix.px-to-rem(55px);
                 width: mix.px-to-rem(55px);
+
+                .buttonToTopIcon {
+                    height: mix.px-to-rem(32px);
+                    width: mix.px-to-rem(32px);
+                }
+            }
+        }
+    }
+
+    @include mix.respond-to('xSmall') {
+        .buttonContainer {
+            height: mix.px-to-rem(50px);
+            width: mix.px-to-rem(50px);
+
+            .buttonToTop {
+                height: mix.px-to-rem(50px);
+                width: mix.px-to-rem(50px);
+
+                .buttonToTopIcon {
+                    height: mix.px-to-rem(28px);
+                    width: mix.px-to-rem(28px);
+                }
             }
         }
     }

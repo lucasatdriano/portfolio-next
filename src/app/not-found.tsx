@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useLanguage } from '../hooks/useLanguage';
 import { Home } from '@boxicons/react';
 
-export default function NotFound() {
+export default function NotFoundPage() {
     const { t, currentLang } = useLanguage();
 
     return (
@@ -21,7 +21,7 @@ export default function NotFound() {
 
             <div className="notFoundActions">
                 <Link href={`/${currentLang}`} className="notFoundButton">
-                    <Home />
+                    <Home className="notFoundIcon" />
                     {t('notFound.backHome')}
                 </Link>
             </div>

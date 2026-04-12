@@ -6,6 +6,7 @@
     display: flex;
     place-content: center;
     padding-block: mix.px-to-rem(10px);
+    @include mix.transition(background, 0.5s);
 
     &:nth-child(even) {
         .contentProject {
@@ -37,7 +38,7 @@
         .titleProject {
             grid-area: title;
             place-self: center;
-            @include mix.responsive-size(30px, null, null);
+            @include mix.responsive-size(22px, null, null);
         }
 
         .linkImage {
@@ -58,7 +59,7 @@
 
         .descriptionProject {
             grid-area: description;
-            @include mix.responsive-size(16px, 10px, null);
+            @include mix.responsive-size(14px, 10px, null);
             margin-block-start: mix.px-to-rem(-5px);
         }
 
@@ -70,10 +71,11 @@
             justify-items: end;
             gap: mix.px-to-rem(5px);
             font-family: vars.$font-family-title;
-            @include mix.responsive-size(22px, null, null);
+            @include mix.responsive-size(16px, null, null);
             padding-inline: mix.px-to-rem(10px);
 
-            .stacks {
+            .stackTitle {
+                padding-block-end: mix.px-to-rem(8px);
                 width: fit-content;
             }
 
@@ -104,6 +106,11 @@
                 width: mix.px-to-rem(36px);
             }
         }
+    }
+
+    &:hover {
+        @include mix.theme(dark, 'hover');
+        @include mix.transition(background, 0.5s);
     }
 
     @include mix.respond-to('laptop') {

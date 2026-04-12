@@ -101,7 +101,8 @@ export default function DropdownLanguage({
                     alt={`Bandeira do ${currentLanguageTranslatedName}`}
                     width={32}
                     height={24}
-                    className="imgFlag"
+                    className="imageFlag"
+                    loading="lazy"
                 />
                 <p className="language">{currentLanguageTranslatedName}</p>
                 <ChevronDown className="arrowLang" aria-hidden="true" />
@@ -120,7 +121,8 @@ export default function DropdownLanguage({
                                 alt={`Bandeira do ${getTranslatedLanguageName(lang.code)}`}
                                 width={24}
                                 height={16}
-                                className="imgFlag"
+                                className="imageFlag"
+                                loading="lazy"
                             />
                             <p className="language">
                                 {getTranslatedLanguageName(lang.code)}

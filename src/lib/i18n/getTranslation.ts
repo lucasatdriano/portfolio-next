@@ -9,7 +9,7 @@ const translations: Translations = {
     es: es,
 };
 
-export function getTranslation(lang: Language, path: string): string {
+export function getTranslation(lang: Language, path: string): unknown {
     const keys = path.split('.');
     let result: unknown = translations[lang];
 
@@ -17,10 +17,9 @@ export function getTranslation(lang: Language, path: string): string {
         if (result && typeof result === 'object' && key in result) {
             result = (result as Record<string, unknown>)[key];
         } else {
-            console.warn(`Translation not found: ${path}`);
             return path;
         }
     }
 
-    return typeof result === 'string' ? result : path;
+    return result !== undefined ? result : path;
 }

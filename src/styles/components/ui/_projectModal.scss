@@ -1,0 +1,333 @@
+@use '../../abstracts/variables' as vars;
+@use '../../abstracts/mixins' as mix;
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: vars.$color-overlay;
+    backdrop-filter: blur(2px);
+    z-index: 9998;
+
+    &[data-state='open'] {
+        animation: fadeIn 0.2s ease;
+    }
+
+    &[data-state='closed'] {
+        animation: fadeOut 0.2s ease;
+    }
+}
+
+.modalContent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include mix.theme(dark);
+    border-radius: 16px;
+    width: 80vw;
+    height: 75vh;
+    overflow: hidden;
+    z-index: 9999;
+    display: flex;
+    flex-direction: row-reverse;
+    outline: none;
+
+    &[data-state='open'] {
+        animation: slideUp 0.3s ease;
+    }
+
+    &[data-state='closed'] {
+        animation: slideDown 0.2s ease;
+    }
+
+    .modalClose {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        float: right;
+        @include mix.theme(light);
+        border: none;
+        border-radius: 50%;
+        width: mix.px-to-rem(36px);
+        height: mix.px-to-rem(36px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include mix.transition(all, 0.2s ease);
+        z-index: 10;
+
+        &:hover {
+            @include mix.theme(dark);
+            transform: scale(1.1);
+
+            .closeIcon {
+                color: vars.$dark-color;
+            }
+        }
+
+        .closeIcon {
+            width: mix.px-to-rem(24px);
+            height: mix.px-to-rem(24px);
+            @include mix.transition(color, 0.2s);
+        }
+    }
+
+    .modalImage {
+        margin: auto;
+        width: 50%;
+        padding: mix.px-to-rem(32px);
+
+        .modalProjectImage {
+            width: 100%;
+            height: fit-content;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+    }
+
+    .modalBody {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 mix.px-to-rem(24px) mix.px-to-rem(24px);
+        overflow-y: auto;
+        gap: mix.px-to-rem(14px);
+        margin-block: mix.px-to-rem(8px);
+
+        .modalTitle {
+            @include mix.responsive-size(22px, null, null);
+        }
+
+        .modalDescription {
+            display: grid;
+            gap: mix.px-to-rem(12px);
+        }
+
+        .modalFeaturesTitle,
+        .modalLearningsTitle,
+        .modalChallengesTitle,
+        .modalTechTitle {
+            @include mix.responsive-size(14px, null, null);
+            margin-block-end: mix.px-to-rem(6px);
+        }
+
+        .modalDescription,
+        .modalFeatures,
+        .modalChallenges,
+        .modalLearnings {
+            @include mix.responsive-size(12px, null, null);
+        }
+
+        .modalFeatures {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .featuresList {
+                display: flex;
+                flex-direction: column;
+                padding-inline-start: mix.px-to-rem(20px);
+                gap: mix.px-to-rem(8px);
+                list-style: outside;
+            }
+        }
+
+        .modalTechnologies {
+            margin-block-end: mix.px-to-rem(28px);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .modalTechList {
+                display: flex;
+                flex-wrap: wrap;
+                gap: mix.px-to-rem(12px);
+
+                .modalTechItem {
+                    @include mix.theme(dark, 'accent');
+                    border-radius: 8px;
+                    padding: mix.px-to-rem(8px) mix.px-to-rem(16px);
+                    @include mix.transition(all, 0.2s);
+
+                    &:hover {
+                        transform: translateY(-2px);
+                        @include mix.theme(dark, 'hover');
+                    }
+
+                    .modalTechLink {
+                        display: flex;
+                        align-items: center;
+                        gap: mix.px-to-rem(8px);
+                        @include mix.responsive-size(10px, null, null);
+
+                        .modalTechIcon {
+                            width: mix.px-to-rem(24px);
+                            height: mix.px-to-rem(24px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .modalLinks {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding-inline: mix.px-to-rem(12px);
+            padding-block-start: mix.px-to-rem(24px);
+            border-block-start: 1px solid vars.$color-primary;
+            gap: mix.px-to-rem(12px);
+
+            .modalLinkButton {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: mix.px-to-rem(8px);
+                padding: mix.px-to-rem(12px) mix.px-to-rem(24px);
+                border-radius: 12px;
+                @include mix.transition(all, 0.2s);
+                @include mix.theme(dark, 'accent');
+                @include mix.responsive-size(12px, null, null);
+
+                &:hover {
+                    @include mix.theme(dark, 'hover');
+                    transform: translateY(-2px);
+                }
+
+                .modalLinkIcon {
+                    width: mix.px-to-rem(20px);
+                    height: mix.px-to-rem(20px);
+                }
+            }
+        }
+    }
+}
+
+@include mix.respond-to('laptop') {
+    .modalContent {
+        width: 80vw;
+        height: 90vh;
+        flex-direction: column;
+
+        .modalImage {
+            height: fit-content;
+            max-height: 350px;
+            width: fit-content;
+            padding-block-end: mix.px-to-rem(0px);
+
+            .modalProjectImage {
+                width: 100%;
+                height: 100%;
+                border-radius: 16px;
+            }
+        }
+
+        .modalBody {
+            height: 80%;
+            width: 100%;
+        }
+    }
+}
+
+@include mix.respond-to('small') {
+    .modalContent {
+        width: 90vw;
+        height: 80vh;
+        border-radius: 12px;
+
+        .modalClose {
+            width: mix.px-to-rem(32px);
+            height: mix.px-to-rem(32px);
+
+            .closeIcon {
+                width: mix.px-to-rem(20px);
+                height: mix.px-to-rem(20px);
+            }
+        }
+
+        .modalBody {
+            .modalFeaturesTitle,
+            .modalLearningsTitle,
+            .modalChallengesTitle,
+            .modalTechTitle {
+                @include mix.responsive-size(16px, null, null);
+            }
+
+            .modalDescription,
+            .modalFeatures,
+            .modalChallenges,
+            .modalLearnings {
+                @include mix.responsive-size(14px, null, null);
+            }
+
+            .modalTechnologies {
+                margin-block-end: mix.px-to-rem(18px);
+
+                .modalTechList {
+                    .modalTechItem {
+                        .modalTechLink {
+                            .modalTechIcon {
+                                width: mix.px-to-rem(20px);
+                                height: mix.px-to-rem(20px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .modalLinks {
+                padding-inline: mix.px-to-rem(6px);
+                padding-block-start: mix.px-to-rem(18px);
+
+                .modalLinkButton {
+                    @include mix.responsive-size(14px, null, null);
+                    padding: mix.px-to-rem(8px) mix.px-to-rem(12px);
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+}

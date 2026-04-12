@@ -14,7 +14,7 @@
         display: grid;
         align-items: center;
         @include mix.responsive-size(null, 24px, null);
-        grid-template-areas: 'title image ' 'about image ' 'skills image';
+        grid-template-areas: 'title image ' 'about image ' 'skills .';
         grid-template-columns: 2fr 1fr;
         gap: mix.px-to-rem(36px);
 
@@ -25,6 +25,8 @@
         .textContainer {
             grid-area: about;
             height: 100%;
+            display: grid;
+            gap: mix.px-to-rem(16px);
 
             .textAboutMe {
                 @include mix.responsive-size(16px, null, null);
@@ -131,6 +133,7 @@
 
                 .textContainer {
                     padding-block-start: mix.px-to-rem(20px);
+                    gap: mix.px-to-rem(12px);
                 }
             }
         }

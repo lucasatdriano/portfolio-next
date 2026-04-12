@@ -41,11 +41,11 @@
     }
 
     .loadingContainer {
-        @include mix.theme(light, 'main');
+        @include mix.theme(light);
     }
 
     .notFoundContainer {
-        @include mix.theme(light, 'main');
+        @include mix.theme(light);
     }
 
     header {
@@ -64,7 +64,7 @@
                 }
 
                 .navContainer {
-                    @include mix.theme(light, 'main');
+                    @include mix.theme(light);
                 }
             }
         }
@@ -92,7 +92,7 @@
         .settings {
             .languageContainer {
                 .optionsLang {
-                    @include mix.theme(light, 'main');
+                    @include mix.theme(light);
 
                     .langs {
                         &:hover {
@@ -110,11 +110,11 @@
 
     main {
         .buttonContainer {
-            @include mix.theme(light, 'main');
+            @include mix.theme(light);
 
             .buttonToTop {
                 border: 2px solid vars.$light-background-accent;
-                @include mix.theme(light, 'main');
+                @include mix.theme(light);
             }
         }
 
@@ -147,6 +147,10 @@
 
             .projectContainer {
                 @include mix.theme(light);
+
+                &:hover {
+                    @include mix.theme(light, 'hover');
+                }
             }
         }
 
@@ -163,5 +167,31 @@
 
     footer {
         @include mix.theme(light, 'accent');
+    }
+
+    .modalContent {
+        @include mix.theme(light);
+
+        .modalTechnologies {
+            .modalTechList {
+                .modalTechItem {
+                    @include mix.theme(light, 'accent');
+
+                    &:hover {
+                        @include mix.theme(light, 'hover');
+                    }
+                }
+            }
+        }
+
+        .modalLinks {
+            .modalLinkButton {
+                @include mix.theme(light, 'accent');
+
+                &:hover {
+                    @include mix.theme(light, 'hover');
+                }
+            }
+        }
     }
 }

@@ -20,6 +20,7 @@
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
+        box-shadow: 2px 2px 8px vars.$color-secondary;
         @include mix.transition(null, 0.3s, ease-in-out);
     }
 

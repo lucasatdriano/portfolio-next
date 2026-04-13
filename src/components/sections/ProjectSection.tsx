@@ -42,7 +42,7 @@ export default function ProjectsSection() {
                 <CardProject
                     key={project.id}
                     title={project.title}
-                    image={project.image}
+                    image={project.images[0]}
                     description={t(`projects.cardDescriptions.${project.id}`)}
                     repoUrl={project.repoUrl}
                     liveUrl={project.liveUrl}
@@ -57,6 +57,7 @@ export default function ProjectsSection() {
                     onClose={closeModal}
                     project={{
                         ...selectedProject,
+                        images: selectedProject.images,
                         modalIntroduction: t(
                             `projects.modal.fullDescription.${selectedProject.id}.introduction`,
                         ),

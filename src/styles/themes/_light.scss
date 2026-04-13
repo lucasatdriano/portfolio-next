@@ -25,7 +25,7 @@
     }
 
     a {
-        color: vars.$light-color;
+        color: vars.$light-background-font;
     }
 
     .title {
@@ -70,14 +70,14 @@
         }
 
         .btnLang {
-            border: 1px solid vars.$light-color;
-            color: vars.$light-color;
+            border: 1px solid vars.$light-background-font;
+            color: vars.$light-background-font;
         }
 
         .themeToggle {
             &:focus + .iconSun,
             &:focus ~ .iconMoon {
-                outline: 2px solid vars.$light-color;
+                outline: 2px solid vars.$light-background-font;
             }
         }
 
@@ -150,6 +150,13 @@
 
                 &:hover {
                     @include mix.theme(light, 'hover');
+                }
+
+                .viewDetailsButton {
+                    .detailsButton {
+                        @include mix.theme(light);
+                        border: 1px solid vars.$light-background-font;
+                    }
                 }
             }
         }

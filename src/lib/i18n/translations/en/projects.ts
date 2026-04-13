@@ -5,10 +5,13 @@ export const projects = {
     technologies: 'Technologies Used:',
     moreTechs: 'technologies',
     forDesktop: 'for desktop',
+    viewDetailsButton: 'View details',
+    clickToOpenModal: 'Click to open project details',
     cardDescriptions: {
-        lemnos: '<span class="spanColor">Lemnos</span> is a tech e-commerce developed with <span class="spanColor">React</span> and <span class="spanColor">Vite</span>, with <span class="spanColor">Firebase authentication</span>. The project includes features such as <span class="spanColor">login</span>, <span class="spanColor">advanced product filters</span>, <span class="spanColor">search</span>, <span class="spanColor">infinite scroll</span> and <span class="spanColor">detailed product display</span>. It also has a <span class="spanColor">dark mode</span> and an <span class="spanColor">admin panel</span> to <span class="spanColor">manage products and users</span>. All styling is done with <span class="spanColor">SCSS</span>, and the application state is managed with <span class="spanColor">Redux</span>.',
+        lemnos: '<span class="spanColor">Lemnos</span> is a full e-commerce application featuring <span class="spanColor">authentication</span>, <span class="spanColor">advanced filters</span>, <span class="spanColor">search</span>, and <span class="spanColor">infinite scroll</span>, built with <span class="spanColor">React</span>, <span class="spanColor">Firebase</span>, and <span class="spanColor">Redux</span>. It also includes an <span class="spanColor">admin panel</span> and a modern UI.',
+
         alphaSpeed:
-            '<span class="spanColor">Alpha Speed</span> is a website for a vehicle dealership, featuring a <span class="spanColor">dynamic showcase</span>, interactive <span class="spanColor">search filters</span> and <span class="spanColor">local storage login</span>. The filter offers <span class="spanColor">real-time updates</span>, instantly displaying vehicles according to user preferences, and the login recognizes the user on future visits <span class="spanColor">without needing a database</span>.',
+            '<span class="spanColor">Alpha Speed</span> is a car dealership platform with a <span class="spanColor">dynamic catalog</span> and <span class="spanColor">real-time filters</span>, providing fast navigation and a personalized experience with <span class="spanColor">persistent login</span> on the front-end.',
     },
     modal,
 };

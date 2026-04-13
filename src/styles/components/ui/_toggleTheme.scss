@@ -14,7 +14,7 @@
 
         &:focus + .iconSun,
         &:focus ~ .iconMoon {
-            outline: 2px solid vars.$dark-color;
+            outline: 2px solid vars.$dark-background-font;
             border-radius: 5px;
         }
     }

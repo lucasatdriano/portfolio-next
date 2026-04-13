@@ -45,7 +45,6 @@ export function useLanguage() {
         [currentLang, pathname, router],
     );
 
-    // 🔥 SOLUÇÃO: Função com overloads
     function t(path: string): string;
     function t(path: string, options: { returnObjects: true }): unknown;
     function t(path: string, options?: { returnObjects?: boolean }): unknown {

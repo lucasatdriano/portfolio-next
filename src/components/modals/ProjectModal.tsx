@@ -6,13 +6,15 @@ import { CodeAlt, Link as LinkIcon, X } from '@boxicons/react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useLanguage } from '@/src/hooks/useLanguage';
 import { Technology } from '@/src/interfaces';
+import ImageCarousel from '../ui/display/ImageCarousel';
+import { useState } from 'react';
 
 interface ProjectModalProps {
     isOpen: boolean;
     onClose: () => void;
     project: {
         title: string;
-        image: string;
+        images: string[];
         repoUrl: string;
         liveUrl: string;
         technologies: Technology[];
@@ -31,28 +33,38 @@ export default function ProjectModal({
     onClose,
     project,
 }: ProjectModalProps) {
+    const [isAnimating, setIsAnimating] = useState(false);
     const { t } = useLanguage();
 
+    const handleClose = () => {
+        setIsAnimating(true);
+        setTimeout(() => {
+            onClose();
+            setIsAnimating(false);
+        }, 200);
+    };
+
+    const descriptionId = 'modal-description';
+
     return (
-        <Dialog.Root open={isOpen} onOpenChange={onClose}>
+        <Dialog.Root open={isOpen} onOpenChange={handleClose}>
             <Dialog.Portal>
                 <Dialog.Overlay className="modalOverlay" />
-                <Dialog.Content className="modalContent">
+                <Dialog.Content
+                    className="modalContent"
+                    data-state={isOpen && !isAnimating ? 'open' : 'closed'}
+                    aria-describedby={descriptionId}
+                >
                     <Dialog.Close asChild>
                         <button className="modalClose">
                             <X className="closeIcon" />
                         </button>
                     </Dialog.Close>
 
-                    <div className="modalImage">
-                        <Image
-                            src={project.image}
-                            alt={project.title}
-                            width={800}
-                            height={450}
-                            className="modalProjectImage"
-                        />
-                    </div>
+                    <ImageCarousel
+                        images={project.images}
+                        title={project.title}
+                    />
 
                     <div className="modalBody">
                         <div className="modalHeader">
@@ -61,31 +73,33 @@ export default function ProjectModal({
                             </Dialog.Title>
                         </div>
 
-                        <div className="modalDescription">
-                            {project.modalIntroduction && (
-                                <p
-                                    dangerouslySetInnerHTML={{
-                                        __html: project.modalIntroduction,
-                                    }}
-                                />
-                            )}
+                        <Dialog.Description asChild>
+                            <div className="modalDescription">
+                                {project.modalIntroduction && (
+                                    <div
+                                        dangerouslySetInnerHTML={{
+                                            __html: project.modalIntroduction,
+                                        }}
+                                    />
+                                )}
 
-                            {project.modalDevelopment && (
-                                <p
-                                    dangerouslySetInnerHTML={{
-                                        __html: project.modalDevelopment,
-                                    }}
-                                />
-                            )}
+                                {project.modalDevelopment && (
+                                    <div
+                                        dangerouslySetInnerHTML={{
+                                            __html: project.modalDevelopment,
+                                        }}
+                                    />
+                                )}
 
-                            {project.modalArchitecture && (
-                                <p
-                                    dangerouslySetInnerHTML={{
-                                        __html: project.modalArchitecture,
-                                    }}
-                                />
-                            )}
-                        </div>
+                                {project.modalArchitecture && (
+                                    <div
+                                        dangerouslySetInnerHTML={{
+                                            __html: project.modalArchitecture,
+                                        }}
+                                    />
+                                )}
+                            </div>
+                        </Dialog.Description>
 
                         {project.features && project.features.length > 0 && (
                             <div className="modalFeatures">
@@ -107,24 +121,22 @@ export default function ProjectModal({
                             </div>
                         )}
 
-                        <div className="modalDescription">
-                            {project.modalConclusion && (
-                                <div className="modalConclusion">
-                                    <p
-                                        dangerouslySetInnerHTML={{
-                                            __html: project.modalConclusion,
-                                        }}
-                                    />
-                                </div>
-                            )}
-                        </div>
+                        {project.modalConclusion && (
+                            <div className="modalDescription">
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: project.modalConclusion,
+                                    }}
+                                />
+                            </div>
+                        )}
 
                         {project.challenges && (
                             <div className="modalChallenges">
                                 <h3 className="modalChallengesTitle">
                                     {t('projects.modal.challengesTitle')}
                                 </h3>
-                                <p
+                                <div
                                     dangerouslySetInnerHTML={{
                                         __html: project.challenges,
                                     }}
@@ -137,7 +149,7 @@ export default function ProjectModal({
                                 <h3 className="modalLearningsTitle">
                                     {t('projects.modal.learningsTitle')}
                                 </h3>
-                                <p
+                                <div
                                     dangerouslySetInnerHTML={{
                                         __html: project.learnings,
                                     }}
@@ -162,7 +174,7 @@ export default function ProjectModal({
                                             className="modalTechLink"
                                         >
                                             <Image
-                                                src={tech.url}
+                                                src={tech.iconUrl}
                                                 alt={tech.name}
                                                 width={32}
                                                 height={32}

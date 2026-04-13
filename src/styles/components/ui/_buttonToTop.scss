@@ -2,6 +2,8 @@
 @use '../../abstracts/mixins' as mix;
 
 main {
+    max-width: 100svw;
+
     .buttonContainer {
         cursor: pointer;
         height: mix.px-to-rem(60px);

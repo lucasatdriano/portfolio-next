@@ -7,6 +7,27 @@
     place-content: center;
     padding-block: mix.px-to-rem(10px);
     @include mix.transition(background, 0.5s);
+    position: relative;
+    cursor: pointer;
+    border-radius: 12px;
+    @include mix.transition(all, 0.3s ease);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at center,
+            transparent 30%,
+            rgba(0, 0, 0, 0.02) 100%
+        );
+        opacity: 0;
+        pointer-events: none;
+        @include mix.transition(opacity, 0.3s);
+    }
 
     &:nth-child(even) {
         .contentProject {
@@ -59,7 +80,7 @@
 
         .descriptionProject {
             grid-area: description;
-            @include mix.responsive-size(14px, 10px, null);
+            @include mix.responsive-size(16px, 10px, null);
             margin-block-start: mix.px-to-rem(-5px);
         }
 
@@ -71,7 +92,7 @@
             justify-items: end;
             gap: mix.px-to-rem(5px);
             font-family: vars.$font-family-title;
-            @include mix.responsive-size(16px, null, null);
+            @include mix.responsive-size(18px, null, null);
             padding-inline: mix.px-to-rem(10px);
 
             .stackTitle {
@@ -94,12 +115,12 @@
         .linksProject {
             grid-area: links;
             width: 100%;
-            place-self: start;
+            place-self: end;
             display: flex;
             align-items: center;
             justify-content: start;
             gap: mix.px-to-rem(15px);
-            @include mix.responsive-size(null, 15px, null);
+            padding: mix.px-to-rem(15px);
 
             .iconProject {
                 height: mix.px-to-rem(36px);
@@ -111,6 +132,47 @@
     &:hover {
         @include mix.theme(dark, 'hover');
         @include mix.transition(background, 0.5s);
+    }
+
+    .viewDetailsButton {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        opacity: 0;
+        transform: translateY(10px);
+        @include mix.transition(all, 0.3s, ease);
+        z-index: 5;
+
+        .detailsButton {
+            display: flex;
+            align-items: center;
+            gap: mix.px-to-rem(8px);
+            padding: mix.px-to-rem(8px) mix.px-to-rem(16px);
+            @include mix.theme(dark);
+            border: 1px solid vars.$dark-background-font;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 14px;
+            @include mix.transition(all, 0.2s);
+
+            &:hover {
+                @include mix.theme(dark, 'accent');
+                transform: scale(1.05);
+                gap: mix.px-to-rem(10px);
+            }
+
+            .detailsIcon {
+                width: mix.px-to-rem(18px);
+                height: mix.px-to-rem(18px);
+            }
+        }
+    }
+
+    @media (hover: hover) {
+        &:hover .viewDetailsButton {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     @include mix.respond-to('laptop') {
@@ -154,7 +216,7 @@
 
             .descriptionProject {
                 text-align: center;
-                @include mix.responsive-size(14px, 10px, null);
+                @include mix.responsive-size(16px, 10px, null);
             }
 
             .linksProject {
@@ -162,10 +224,26 @@
             }
 
             .stackContainer {
-                .stackContainer {
-                    .stackDetails {
-                        flex-wrap: wrap;
-                    }
+                .stackDetails {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+
+        .viewDetailsButton {
+            opacity: 1;
+            transform: translateY(0);
+            bottom: 8px;
+            right: 8px;
+
+            .detailsButton {
+                padding: mix.px-to-rem(6px) mix.px-to-rem(12px);
+                @include mix.responsive-size(12px, null, null);
+                background: vars.$color-shadow;
+                backdrop-filter: blur(8px);
+
+                span {
+                    display: inline;
                 }
             }
         }
@@ -204,6 +282,10 @@
                 }
             }
         }
+
+        .viewDetailsButton {
+            top: 16px;
+        }
     }
 
     @include mix.respond-to('small') {
@@ -220,13 +302,21 @@
                 @include mix.responsive-size(28px, null, null);
             }
 
+            .descriptionProject {
+                text-align: left;
+            }
+
             .linksProject {
                 gap: mix.px-to-rem(10px);
-                @include mix.responsive-size(null, 5px, null);
+                padding: mix.px-to-rem(5px);
             }
 
             .stackContainer {
+                @include mix.responsive-size(18px, null, null);
+
                 .stackDetails {
+                    gap: mix.px-to-rem(8px);
+
                     .techIcon {
                         height: mix.px-to-rem(28px);
                         width: mix.px-to-rem(28px);

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ToolTip from '../display/ToolTip';
-import { CodeAlt, Link as LinkIcon } from '@boxicons/react';
+import { CodeAlt, InfoCircle, Link as LinkIcon } from '@boxicons/react';
 import { useLanguage } from '@/src/hooks/useLanguage';
 import { Technology } from '@/src/interfaces';
 
@@ -32,13 +32,16 @@ export default function CardProject({
     const visibleTechs = technologies.slice(0, VISIBLE_ICONS);
     const hiddenCount = technologies.length - VISIBLE_ICONS;
 
-    // Função para lidar com clique no card inteiro
     const handleCardClick = (e: React.MouseEvent) => {
-        // Se o clique foi em um link ou dentro de um link, não abre o modal
         const target = e.target as HTMLElement;
         if (target.closest('a') || target.closest('button')) {
             return;
         }
+        onCardClick?.();
+    };
+
+    const handleButtonClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
         onCardClick?.();
     };
 
@@ -106,7 +109,7 @@ export default function CardProject({
                                         className="techLink"
                                     >
                                         <Image
-                                            src={tech.url}
+                                            src={tech.iconUrl}
                                             alt={tech.name}
                                             className="techIcon"
                                             width={24}
@@ -128,6 +131,17 @@ export default function CardProject({
                             )}
                         </div>
                     </div>
+                </div>
+
+                <div className="viewDetailsButton">
+                    <button
+                        className="detailsButton"
+                        onClick={handleButtonClick}
+                        aria-label={t('projects.clickToOpenModal')}
+                    >
+                        <InfoCircle className="detailsIcon" />
+                        <span>{t('projects.viewDetailsButton')}</span>
+                    </button>
                 </div>
             </div>
         </article>

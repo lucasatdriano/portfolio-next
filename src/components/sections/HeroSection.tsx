@@ -23,7 +23,7 @@ export default function HeroSection() {
                     <h1 className="heroTitle">
                         {t('hero.title')} <br />
                         <TypeWriter
-                            text={'Lucas Adriano.'}
+                            text={'Lucas Adriano'}
                             delay={150}
                             className="titleSpan"
                         />

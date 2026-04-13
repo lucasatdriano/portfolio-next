@@ -15,6 +15,7 @@ body {
     overflow-x: hidden;
     font-family: vars.$font-family-body;
     font-size: vars.$base-font-size;
+    max-width: 100svw;
     line-height: 1.6;
     position: relative;
     @include mix.theme(dark);
@@ -49,7 +50,7 @@ summary {
 
 a {
     text-decoration: none;
-    color: vars.$dark-color;
+    color: vars.$dark-background-font;
 }
 
 .logo {

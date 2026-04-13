@@ -4,62 +4,90 @@ export const projects: Project[] = [
     {
         id: 'lemnos',
         title: 'Lemnos',
-        image: '/images/projectsImages/lemnosDesk.png',
+        images: [
+            '/images/projectsImages/lemnosDesk.png',
+            // '/images/projectsImages/alphaDesk.png',
+        ],
         repoUrl: 'https://github.com/lucasatdriano/Lemnos',
         liveUrl: 'https://lemnos.vercel.app',
         technologies: [
             {
                 name: 'React',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+                url: 'https://react.dev',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
             },
             {
                 name: 'JavaScript',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
             },
             {
                 name: 'SASS',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg',
+                url: 'https://sass-lang.com/documentation',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg',
             },
             {
                 name: 'Redux',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg',
+                url: 'https://redux.js.org',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg',
             },
             {
                 name: 'Git',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
+                url: 'https://git-scm.com/doc',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
             },
             {
                 name: 'Figma',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg',
+                url: 'https://help.figma.com/hc/en-us',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg',
             },
         ],
     },
     {
         id: 'alphaSpeed',
         title: 'Alpha Speed',
-        image: '/images/projectsImages/alphaDesk.png',
+        images: [
+            '/images/projectsImages/alphaDesk.png',
+            // '/images/projectsImages/lemnosDesk.png',
+        ],
         repoUrl: 'https://github.com/lucasatdriano/AlphaSpeed',
         liveUrl: 'https://lucasatdriano.github.io/AlphaSpeed',
         technologies: [
             {
                 name: 'HTML',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
             },
             {
                 name: 'CSS',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
             },
             {
                 name: 'JavaScript',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
             },
             {
                 name: 'Git',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
+                url: 'https://git-scm.com/doc',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
             },
             {
                 name: 'Figma',
-                url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg',
+                url: 'https://help.figma.com/hc/en-us',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg',
             },
         ],
     },

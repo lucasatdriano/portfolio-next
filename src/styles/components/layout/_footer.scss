@@ -11,4 +11,10 @@ footer {
         @include mix.responsive-size(12px, 8px, null);
         place-self: start;
     }
+
+    @include mix.respond-to('laptop') {
+        .footerText {
+            margin-block-start: mix.px-to-rem(80px);
+        }
+    }
 }

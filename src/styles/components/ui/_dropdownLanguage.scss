@@ -6,7 +6,7 @@
 
     .btnLang {
         @include mix.responsive-size(22px, 2.5px, null);
-        border: 1px solid vars.$dark-color;
+        border: 1px solid vars.$dark-background-font;
         border-radius: 5px;
         display: flex;
         align-items: center;

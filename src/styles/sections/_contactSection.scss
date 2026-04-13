@@ -75,7 +75,7 @@
         }
     }
 
-    @include mix.respond-to('wave') {
+    @include mix.respond-to('desktopSmall') {
         .contactContainer {
             .contactItem {
                 width: mix.px-to-rem(65px);

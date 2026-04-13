@@ -5,10 +5,13 @@ export const projects = {
     technologies: 'Tecnologías Utilizadas:',
     moreTechs: 'tecnologías',
     forDesktop: 'para escritorio',
+    viewDetailsButton: 'Ver detalles',
+    clickToOpenModal: 'Haga clic para abrir los detalles del proyecto',
     cardDescriptions: {
-        lemnos: '<span class="spanColor">Lemnos</span> es un e-commerce de tecnología desarrollado con <span class="spanColor">React</span> y <span class="spanColor">Vite</span>, con <span class="spanColor">autenticación mediante Firebase</span>. El proyecto incluye funcionalidades como <span class="spanColor">inicio de sesión</span>, <span class="spanColor">filtros avanzados</span> de productos, <span class="spanColor">búsqueda</span>, <span class="spanColor">desplazamiento infinito</span> y <span class="spanColor">visualización detallada</span> de productos. También tiene un <span class="spanColor">modo oscuro</span> y un <span class="spanColor">panel de administración</span> para <span class="spanColor">gestionar productos y usuarios</span>. Todo el estilo está hecho con <span class="spanColor">SCSS</span>, y el estado de la aplicación se gestiona con <span class="spanColor">Redux</span>.',
+        lemnos: '<span class="spanColor">Lemnos</span> es un e-commerce completo con <span class="spanColor">autenticación</span>, <span class="spanColor">filtros avanzados</span>, <span class="spanColor">búsqueda</span> e <span class="spanColor">infinite scroll</span>, desarrollado con <span class="spanColor">React</span>, <span class="spanColor">Firebase</span> y <span class="spanColor">Redux</span>. Incluye un <span class="spanColor">panel administrativo</span> y una interfaz moderna.',
+
         alphaSpeed:
-            '<span class="spanColor">Alpha Speed</span> es un sitio web para una concesionaria de vehículos, que cuenta con un <span class="spanColor">escaparate dinámico</span>, <span class="spanColor">filtros de búsqueda</span> interactivos e <span class="spanColor">inicio de sesión por almacenamiento local</span>. El filtro ofrece una <span class="spanColor">actualización en tiempo real</span>, mostrando instantáneamente los vehículos según las preferencias del usuario, y el inicio de sesión reconoce al usuario en visitas futuras <span class="spanColor">sin necesidad de una base de datos</span>.',
+            '<span class="spanColor">Alpha Speed</span> es una plataforma para concesionaria con <span class="spanColor">catálogo dinámico</span> y <span class="spanColor">filtros en tiempo real</span>, ofreciendo navegación rápida y personalizada con <span class="spanColor">inicio de sesión persistente</span> en el front-end.',
     },
     modal,
 };

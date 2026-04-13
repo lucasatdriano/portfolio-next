@@ -13,7 +13,7 @@
         margin: auto;
         display: grid;
         align-items: center;
-        @include mix.responsive-size(null, 24px, null);
+        padding: mix.px-to-rem(24px);
         grid-template-areas: 'title image ' 'about image ' 'skills .';
         grid-template-columns: 2fr 1fr;
         gap: mix.px-to-rem(36px);
@@ -95,7 +95,7 @@
         }
     }
 
-    @include mix.respond-to('wave') {
+    @include mix.respond-to('desktopSmall') {
         .about {
             width: 90vw;
 
@@ -115,7 +115,7 @@
 
             .about {
                 padding-block-start: mix.px-to-rem(50px);
-                @include mix.responsive-size(null, null, null);
+                padding: mix.px-to-rem(0px);
                 grid-template-areas: 'title' 'image' 'about' 'skills';
                 grid-template-columns: 1fr;
 
@@ -191,7 +191,7 @@
 
                 .textAboutMe {
                     max-width: 100%;
-                    @include mix.responsive-size(16px, null, null);
+                    @include mix.responsive-size(18px, null, null);
                 }
             }
 

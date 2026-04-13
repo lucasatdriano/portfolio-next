@@ -87,7 +87,6 @@ export interface TranslationKeys {
         viewRepo: string;
         viewProject: string;
         toggleTheme: string;
-        viewDetails: string;
     };
     notFound: {
         title: string;

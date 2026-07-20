@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ToolTip from '../display/ToolTip';
-import { CodeAlt, InfoCircle, Link as LinkIcon } from '@boxicons/react';
 import { useLanguage } from '@/src/hooks/useLanguage';
 import { Technology } from '@/src/interfaces';
+import { BiCodeAlt, BiInfoCircle, BiLink } from 'react-icons/bi';
 
 interface CardProjectProps {
     title: string;
@@ -78,7 +78,7 @@ export default function CardProject({
                             rel="noopener noreferrer"
                             title={t('tooltips.viewRepo')}
                         >
-                            <CodeAlt className="iconProject" />
+                            <BiCodeAlt className="iconProject" />
                         </Link>
                     </ToolTip>
                     <ToolTip text={t('tooltips.viewProject')}>
@@ -88,7 +88,7 @@ export default function CardProject({
                             rel="noopener noreferrer"
                             title={t('tooltips.viewProject')}
                         >
-                            <LinkIcon className="iconProject" />
+                            <BiLink className="iconProject" />
                         </Link>
                     </ToolTip>
                 </div>
@@ -139,7 +139,7 @@ export default function CardProject({
                         onClick={handleButtonClick}
                         aria-label={t('projects.clickToOpenModal')}
                     >
-                        <InfoCircle className="detailsIcon" />
+                        <BiInfoCircle className="detailsIcon" />
                         <span>{t('projects.viewDetailsButton')}</span>
                     </button>
                 </div>

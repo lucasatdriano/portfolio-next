@@ -25,13 +25,9 @@ export default function ProjectsSection() {
     };
 
     const getFeatures = (projectId: string): string[] => {
-        console.log('Buscando:', `projects.modal.features.${projectId}`);
-
         const features = t(`projects.modal.features.${projectId}`, {
             returnObjects: true,
         });
-
-        console.log('Features encontradas:', features);
         return Array.isArray(features) ? features : [];
     };
 
@@ -41,7 +37,7 @@ export default function ProjectsSection() {
             {projects.map((project) => (
                 <CardProject
                     key={project.id}
-                    title={project.title}
+                    title={t(`projects.titleProject.${project.id}`)}
                     image={project.images[0]}
                     description={t(`projects.cardDescriptions.${project.id}`)}
                     repoUrl={project.repoUrl}
@@ -57,6 +53,7 @@ export default function ProjectsSection() {
                     onClose={closeModal}
                     project={{
                         ...selectedProject,
+                        title: t(`projects.titleProject.${selectedProject.id}`),
                         images: selectedProject.images,
                         modalIntroduction: t(
                             `projects.modal.fullDescription.${selectedProject.id}.introduction`,

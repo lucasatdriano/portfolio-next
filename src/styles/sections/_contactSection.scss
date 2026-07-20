@@ -18,7 +18,7 @@
             height: mix.px-to-rem(75px);
             border-radius: 60px;
             @include mix.theme(dark);
-            box-shadow: 0 0 15px vars.$color-shadow;
+            box-shadow: 0 0 15px vars.$color-shadow-black;
             @include mix.transition(width, 0.3s);
 
             &:hover {

@@ -53,7 +53,7 @@
         background: vars.$dark-background-main;
         @include mix.theme(dark);
         border-radius: 8px;
-        box-shadow: 0 4px 20px vars.$color-shadow;
+        box-shadow: 0 4px 20px vars.$color-shadow-black;
         backdrop-filter: blur(10px);
         overflow: hidden;
         opacity: 0;

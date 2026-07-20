@@ -2,11 +2,11 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { CodeAlt, Link as LinkIcon, X } from '@boxicons/react';
 import * as Dialog from '@radix-ui/react-dialog';
+import ImageCarousel from '../ui/display/ImageCarousel';
+import { BiCodeAlt, BiLink, BiX } from 'react-icons/bi';
 import { useLanguage } from '@/src/hooks/useLanguage';
 import { Technology } from '@/src/interfaces';
-import ImageCarousel from '../ui/display/ImageCarousel';
 import { useState } from 'react';
 
 interface ProjectModalProps {
@@ -57,7 +57,7 @@ export default function ProjectModal({
                 >
                     <Dialog.Close asChild>
                         <button className="modalClose">
-                            <X className="closeIcon" />
+                            <BiX className="closeIcon" />
                         </button>
                     </Dialog.Close>
 
@@ -196,7 +196,7 @@ export default function ProjectModal({
                                 rel="noopener noreferrer"
                                 className="modalLinkButton"
                             >
-                                <CodeAlt className="modalLinkIcon" />
+                                <BiCodeAlt className="modalLinkIcon" />
                                 {t('tooltips.viewRepo')}
                             </Link>
                             <Link
@@ -205,7 +205,7 @@ export default function ProjectModal({
                                 rel="noopener noreferrer"
                                 className="modalLinkButton primary"
                             >
-                                <LinkIcon className="modalLinkIcon" />
+                                <BiLink className="modalLinkIcon" />
                                 {t('tooltips.viewProject')}
                             </Link>
                         </div>

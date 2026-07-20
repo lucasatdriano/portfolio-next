@@ -1,5 +1,6 @@
 export type Language = 'pt-br' | 'en' | 'es';
 
+type ProjectKey = 'lemnos' | 'alphaSpeed' | 'landingPsychology' | 'lembraMed';
 export interface TranslationKeys {
     nav: {
         about: string;
@@ -38,40 +39,24 @@ export interface TranslationKeys {
         title: string;
         technologies: string;
         forDesktop: string;
-        cardDescriptions: {
-            lemnos: string;
-            alphaSpeed: string;
-        };
+        titleProject: Record<ProjectKey, string>;
+        cardDescriptions: Record<ProjectKey, string>;
         modal: {
             featuresTitle: string;
             challengesTitle: string;
             learningsTitle: string;
-            fullDescription: {
-                lemnos: {
+            fullDescription: Record<
+                ProjectKey,
+                {
                     introduction: string;
                     development: string;
                     architecture: string;
                     conclusion: string;
-                };
-                alphaSpeed: {
-                    introduction: string;
-                    development: string;
-                    architecture: string;
-                    conclusion: string;
-                };
-            };
-            features: {
-                lemnos: string[];
-                alphaSpeed: string[];
-            };
-            challenges: {
-                lemnos: string;
-                alphaSpeed: string;
-            };
-            learnings: {
-                lemnos: string;
-                alphaSpeed: string;
-            };
+                }
+            >;
+            features: Record<ProjectKey, string[]>;
+            challenges: Record<ProjectKey, string>;
+            learnings: Record<ProjectKey, string>;
         };
     };
     contact: {

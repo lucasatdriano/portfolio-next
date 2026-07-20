@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Language } from '@/src/lib/i18n';
 import { useLanguage } from '@/src/hooks/useLanguage';
-import { ChevronDown } from '@boxicons/react';
+import { BiChevronDown } from 'react-icons/bi';
 
 interface DropdownLanguageProps {
     variant?: 'desktop' | 'mobile';
@@ -105,7 +105,7 @@ export default function DropdownLanguage({
                     loading="lazy"
                 />
                 <p className="language">{currentLanguageTranslatedName}</p>
-                <ChevronDown className="arrowLang" aria-hidden="true" />
+                <BiChevronDown className="arrowLang" aria-hidden="true" />
             </button>
 
             <ul className={`optionsLang ${isOpen ? 'open' : ''}`}>

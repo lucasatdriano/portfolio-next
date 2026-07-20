@@ -12,7 +12,7 @@ main {
         bottom: mix.px-to-rem(20px);
         right: mix.px-to-rem(20px);
         @include mix.theme(dark);
-        box-shadow: 0 0 20px vars.$color-shadow;
+        box-shadow: 0 0 20px vars.$color-shadow-black;
         border-radius: 50%;
         z-index: 999;
         opacity: 0;

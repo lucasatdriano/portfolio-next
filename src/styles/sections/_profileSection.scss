@@ -62,7 +62,7 @@
                 top: 53%;
                 left: 55%;
                 transform: translate(-50%, -50%);
-                background-color: vars.$color-shadow;
+                background-color: vars.$color-shadow-black;
                 opacity: 0.5;
                 border: 2px solid vars.$color-details;
                 z-index: 100;
@@ -84,12 +84,12 @@
             .stackContainer {
                 display: flex;
                 flex-wrap: wrap;
+                padding: mix.px-to-rem(16px);
                 gap: mix.px-to-rem(20px);
-                @include mix.responsive-size(null, 16px, null);
 
                 .skillImage {
-                    width: mix.px-to-rem(42px);
-                    height: mix.px-to-rem(42px);
+                    width: mix.px-to-rem(46px);
+                    height: mix.px-to-rem(46px);
                 }
             }
         }

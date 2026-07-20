@@ -119,7 +119,7 @@
             display: flex;
             align-items: center;
             justify-content: start;
-            gap: mix.px-to-rem(15px);
+            gap: mix.px-to-rem(24px);
             padding: mix.px-to-rem(15px);
 
             .iconProject {
@@ -141,6 +141,7 @@
         opacity: 0;
         transform: translateY(10px);
         @include mix.transition(all, 0.3s, ease);
+        user-select: none;
         z-index: 5;
 
         .detailsButton {
@@ -148,11 +149,13 @@
             align-items: center;
             gap: mix.px-to-rem(8px);
             padding: mix.px-to-rem(8px) mix.px-to-rem(16px);
-            @include mix.theme(dark);
+            background: vars.$color-shadow-black;
+            backdrop-filter: blur(8px);
+            color: vars.$dark-background-font;
             border: 1px solid vars.$dark-background-font;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 14px;
+            @include mix.responsive-size(14px, null, null);
             @include mix.transition(all, 0.2s);
 
             &:hover {
@@ -239,8 +242,6 @@
             .detailsButton {
                 padding: mix.px-to-rem(6px) mix.px-to-rem(12px);
                 @include mix.responsive-size(12px, null, null);
-                background: vars.$color-shadow;
-                backdrop-filter: blur(8px);
 
                 span {
                     display: inline;

@@ -26,6 +26,12 @@ export const skills: Skill[] = [
             'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
     },
     {
+        name: 'Styled-Components',
+        url: 'https://styled-components.com/docs',
+        iconUrl:
+            'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/styledcomponents/styledcomponents-original.svg',
+    },
+    {
         name: 'JavaScript',
         url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
         iconUrl:
@@ -72,6 +78,12 @@ export const skills: Skill[] = [
         url: 'https://postgresql.org',
         iconUrl:
             'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',
+    },
+    {
+        name: 'Docker',
+        url: 'https://docs.docker.com/',
+        iconUrl:
+            'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
     },
     {
         name: 'Redux',

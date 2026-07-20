@@ -1,20 +1,20 @@
-import { Envelope, Github, LinkedinSquare } from '@boxicons/react';
 import { Contact } from '../interfaces';
+import { BiEnvelope, BiLogoGithub, BiLogoLinkedinSquare } from 'react-icons/bi';
 
 export const contacts: Contact[] = [
     {
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/lucasadrianodev',
-        icon: <LinkedinSquare className="iconContact" />,
+        icon: <BiLogoLinkedinSquare className="iconContact" />,
     },
     {
         name: 'E-mail',
         url: 'mailto:lucasatdiano@gmail.com?body=Olá%20Lucas,',
-        icon: <Envelope className="iconContact" />,
+        icon: <BiEnvelope className="iconContact" />,
     },
     {
         name: 'GitHub',
         url: 'https://github.com/lucasatdriano',
-        icon: <Github className="iconContact" />,
+        icon: <BiLogoGithub className="iconContact" />,
     },
 ];

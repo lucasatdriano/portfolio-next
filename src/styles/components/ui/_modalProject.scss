@@ -96,7 +96,7 @@
         .modalLearningsTitle,
         .modalChallengesTitle,
         .modalTechTitle {
-            @include mix.responsive-size(14px, null, null);
+            @include mix.responsive-size(16px, null, null);
             margin-block-end: mix.px-to-rem(6px);
         }
 
@@ -104,7 +104,7 @@
         .modalFeatures,
         .modalChallenges,
         .modalLearnings {
-            @include mix.responsive-size(12px, null, null);
+            @include mix.responsive-size(14px, null, null);
         }
 
         .modalFeatures {
@@ -147,7 +147,7 @@
                         display: flex;
                         align-items: center;
                         gap: mix.px-to-rem(8px);
-                        @include mix.responsive-size(10px, null, null);
+                        @include mix.responsive-size(12px, null, null);
 
                         .modalTechIcon {
                             width: mix.px-to-rem(24px);
@@ -177,7 +177,7 @@
                 border-radius: 12px;
                 @include mix.transition(all, 0.2s);
                 @include mix.theme(dark, 'accent');
-                @include mix.responsive-size(12px, null, null);
+                @include mix.responsive-size(14px, null, null);
 
                 &:hover {
                     @include mix.theme(dark, 'hover');
@@ -260,7 +260,6 @@
                 padding-block-start: mix.px-to-rem(18px);
 
                 .modalLinkButton {
-                    @include mix.responsive-size(14px, null, null);
                     padding: mix.px-to-rem(8px) mix.px-to-rem(12px);
                     border-radius: 8px;
                 }

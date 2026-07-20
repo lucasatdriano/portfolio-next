@@ -1,8 +1,8 @@
 'use client';
 
 import { useLanguage } from '@/src/hooks/useLanguage';
-import { ArrowUpStroke } from '@boxicons/react';
 import { useEffect, useState } from 'react';
+import { BiUpArrowAlt } from 'react-icons/bi';
 
 export default function ButtonToTop() {
     const [isVisible, setIsVisible] = useState(false);
@@ -38,7 +38,7 @@ export default function ButtonToTop() {
                 className="buttonToTop"
                 aria-label={t('tooltips.backToTop')}
             >
-                <ArrowUpStroke className="buttonToTopIcon" />
+                <BiUpArrowAlt className="buttonToTopIcon" />
             </button>
             <span className="tooltipText" role="tooltip">
                 {t('tooltips.backToTop')}

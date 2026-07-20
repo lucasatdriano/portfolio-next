@@ -58,7 +58,7 @@
         .navContainer {
             @include mix.theme(dark);
             height: 0px;
-            box-shadow: 0 2px 15px vars.$color-shadow;
+            box-shadow: 0 2px 15px vars.$color-shadow-black;
             border-radius: 5px;
             position: absolute;
             right: -50px;

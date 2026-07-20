@@ -2,7 +2,7 @@
 
 import { useLanguage } from '@/src/hooks/useLanguage';
 import { useThemeToggle } from '@/src/hooks/useThemeToggle';
-import { Moon, Sun } from '@boxicons/react';
+import { BiMoon, BiSun } from 'react-icons/bi';
 
 interface ToggleThemeProps {
     id: string;
@@ -23,8 +23,8 @@ export default function ToggleTheme({ id }: ToggleThemeProps) {
                 onChange={toggleTheme}
                 aria-label={t('tooltips.toggleTheme')}
             />
-            <Sun className="iconSun" aria-hidden="true" />
-            <Moon className="iconMoon" aria-hidden="true" />
+            <BiSun className="iconSun" aria-hidden="true" />
+            <BiMoon className="iconMoon" aria-hidden="true" />
         </label>
     );
 }

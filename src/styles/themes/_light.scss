@@ -154,7 +154,8 @@
 
                 .viewDetailsButton {
                     .detailsButton {
-                        @include mix.theme(light);
+                        background: vars.$color-shadow-white;
+                        color: vars.$light-background-font;
                         border: 1px solid vars.$light-background-font;
                     }
                 }
@@ -178,6 +179,30 @@
 
     .modalContent {
         @include mix.theme(light);
+
+        .carouselContainer {
+            .carouselMain {
+                .carouselImageWrapper {
+                    @include mix.theme(light, 'hover');
+                }
+            }
+
+            .carouselThumbnailWrapper {
+                .thumbnailArrow {
+                    background: rgba(60, 60, 60, 0.5);
+
+                    &:hover {
+                        background: rgba(70, 70, 70, 0.75);
+                    }
+                }
+
+                .carouselThumbnails {
+                    .thumbnailImage {
+                        @include mix.theme(light, 'hover');
+                    }
+                }
+            }
+        }
 
         .modalTechnologies {
             .modalTechList {

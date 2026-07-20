@@ -1,17 +1,17 @@
 'use client';
 
-import {
-    ChevronsDown,
-    Circle,
-    FileDetail,
-    Github,
-    LinkedinSquare,
-} from '@boxicons/react';
 import Wave from '../layout/Wave';
 import ToolTip from '../ui/display/ToolTip';
 import { useLanguage } from '@/src/hooks/useLanguage';
 import TypeWriter from '../ui/display/TypeWriter';
 import Link from 'next/link';
+import {
+    BiSolidCircle,
+    BiSolidFile,
+    BiLogoGithub,
+    BiLogoLinkedinSquare,
+    BiChevronsDown,
+} from 'react-icons/bi';
 
 export default function HeroSection() {
     const { t } = useLanguage();
@@ -33,9 +33,9 @@ export default function HeroSection() {
                 <div className="heroDetails">
                     <hr className="heroLine" />
                     <div className="circlesContainer">
-                        <Circle className="iconCircle" pack="filled" />
-                        <Circle className="iconCircle" pack="filled" />
-                        <Circle className="iconCircle" pack="filled" />
+                        <BiSolidCircle className="iconCircle" />
+                        <BiSolidCircle className="iconCircle" />
+                        <BiSolidCircle className="iconCircle" />
                     </div>
 
                     <div className="linksContainer">
@@ -45,10 +45,7 @@ export default function HeroSection() {
                                 download
                                 title={t('tooltips.downloadCV')}
                             >
-                                <FileDetail
-                                    className="iconLink"
-                                    pack="filled"
-                                />
+                                <BiSolidFile className="iconLink" />
                             </Link>
                         </ToolTip>
 
@@ -59,7 +56,7 @@ export default function HeroSection() {
                                 rel="noopener noreferrer"
                                 title="GitHub"
                             >
-                                <Github className="iconLink" pack="brands" />
+                                <BiLogoGithub className="iconLink" />
                             </Link>
                         </ToolTip>
 
@@ -70,18 +67,15 @@ export default function HeroSection() {
                                 rel="noopener noreferrer"
                                 title="LinkedIn"
                             >
-                                <LinkedinSquare
-                                    className="iconLink"
-                                    pack="brands"
-                                />
+                                <BiLogoLinkedinSquare className="iconLink" />
                             </Link>
                         </ToolTip>
                     </div>
 
                     <div className="circlesContainer">
-                        <Circle className="iconCircle" pack="filled" />
-                        <Circle className="iconCircle" pack="filled" />
-                        <Circle className="iconCircle" pack="filled" />
+                        <BiSolidCircle className="iconCircle" />
+                        <BiSolidCircle className="iconCircle" />
+                        <BiSolidCircle className="iconCircle" />
                     </div>
                     <hr className="heroLine" />
                 </div>
@@ -108,7 +102,7 @@ export default function HeroSection() {
                 <p className="scrollText" aria-hidden="true">
                     L
                 </p>
-                <ChevronsDown className="scrollIcon" aria-hidden="true" />
+                <BiChevronsDown className="scrollIcon" aria-hidden="true" />
             </div>
             <Wave />
         </section>

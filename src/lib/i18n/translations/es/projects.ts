@@ -3,7 +3,10 @@ import { modal } from './modal';
 export const projects = {
     title: 'Proyectos',
     technologies: 'Tecnologías Utilizadas:',
-    moreTechs: 'tecnologías',
+    moreTech: {
+        one: 'tecnología',
+        other: 'tecnologías',
+    },
     forDesktop: 'para escritorio',
     viewDetailsButton: 'Ver detalles',
     clickToOpenModal: 'Haga clic para abrir los detalles del proyecto',

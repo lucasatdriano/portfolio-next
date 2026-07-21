@@ -122,7 +122,11 @@ export default function CardProject({
 
                             {hiddenCount > 0 && (
                                 <ToolTip
-                                    text={`+ ${hiddenCount} ${t('projects.moreTechs')}`}
+                                    text={`+ ${hiddenCount} ${t(
+                                        hiddenCount === 1
+                                            ? 'projects.moreTech.one'
+                                            : 'projects.moreTech.other',
+                                    )}`}
                                 >
                                     <div className="moreTechs">
                                         +{hiddenCount}

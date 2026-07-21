@@ -56,7 +56,7 @@ export const skills: Skill[] = [
             'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
     },
     {
-        name: 'nodeJs',
+        name: 'node.js',
         url: 'https://nodejs.org',
         iconUrl:
             'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',

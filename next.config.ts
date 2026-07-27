@@ -12,7 +12,13 @@ const nextConfig: NextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'github.com',
+                hostname: 'cdn.jsdelivr.net',
+                pathname: '/gh/lucasatdriano/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'raw.githubusercontent.com',
+                pathname: '/lucasatdriano/portfolio-next/**',
             },
         ],
     },

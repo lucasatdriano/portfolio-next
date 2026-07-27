@@ -15,11 +15,6 @@ const nextConfig: NextConfig = {
                 hostname: 'cdn.jsdelivr.net',
                 pathname: '/gh/lucasatdriano/**',
             },
-            {
-                protocol: 'https',
-                hostname: 'raw.githubusercontent.com',
-                pathname: '/lucasatdriano/portfolio-next/**',
-            },
         ],
     },
 

@@ -94,18 +94,8 @@ export const skills: Skill[] = [
     {
         name: 'I18n',
         url: 'https://www.i18next.com/',
-        // iconUrl:
-        //     'https://cdn.jsdelivr.net/gh/lucasatdriano/portfolio-next@main/public/images/technologies/i18n.png',
         iconUrl:
-            'https://raw.githubusercontent.com/lucasatdriano/portfolio-next/main/public/images/technologies/i18n.png',
-    },
-    {
-        name: 'I18n',
-        url: 'https://www.i18next.com/',
-        // iconUrl:
-        //     'https://cdn.jsdelivr.net/gh/lucasatdriano/portfolio-next@main/public/images/technologies/i18n.svg',
-        iconUrl:
-            'https://raw.githubusercontent.com/lucasatdriano/portfolio-next/main/public/images/technologies/i18n.svg',
+            'https://cdn.jsdelivr.net/gh/lucasatdriano/portfolio-next@main/public/images/technologies/i18n.svg',
     },
     {
         name: 'Git',

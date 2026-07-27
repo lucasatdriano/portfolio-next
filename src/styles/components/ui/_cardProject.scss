@@ -7,10 +7,11 @@
     place-content: center;
     padding-block: mix.px-to-rem(10px);
     @include mix.transition(background, 0.5s);
+    border: 1px solid transparent;
     position: relative;
     cursor: pointer;
     border-radius: 12px;
-    @include mix.transition(all, 0.3s ease);
+    @include mix.transition(all, 0.5s, ease);
 
     &::after {
         content: '';
@@ -125,11 +126,18 @@
             .iconProject {
                 height: mix.px-to-rem(36px);
                 width: mix.px-to-rem(36px);
+                @include mix.transition(all, 0.3s);
+
+                &:hover {
+                    color: vars.$color-primary;
+                    scale: 1.05;
+                }
             }
         }
     }
 
     &:hover {
+        border: 1px solid vars.$color-primary;
         @include mix.theme(dark, 'hover');
         @include mix.transition(background, 0.5s);
     }

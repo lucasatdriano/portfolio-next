@@ -56,13 +56,13 @@ export const skills: Skill[] = [
             'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
     },
     {
-        name: 'node.js',
+        name: 'Node.js',
         url: 'https://nodejs.org',
         iconUrl:
             'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
     },
     {
-        name: 'nestJs',
+        name: 'NestJs',
         url: 'https://nestjs.com',
         iconUrl:
             'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg',
@@ -90,6 +90,12 @@ export const skills: Skill[] = [
         url: 'https://redux.js.org',
         iconUrl:
             'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg',
+    },
+    {
+        name: 'I18n',
+        url: 'https://www.i18next.com/',
+        iconUrl:
+            'https://github.com/lucasatdriano/portfolio-next/blob/main/public/images/technologies/i18n.png',
     },
     {
         name: 'Git',

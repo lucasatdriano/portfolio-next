@@ -12,7 +12,7 @@
         @include mix.theme(dark, 'hover');
         text-align: center;
         border-radius: 5px;
-        @include mix.responsive-size(14px, 5px, null);
+        @include mix.responsive-size(12px, 5px, null);
         padding-inline: mix.px-to-rem(16px);
         position: absolute;
         z-index: 99;

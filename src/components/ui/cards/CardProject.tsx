@@ -76,7 +76,7 @@ export default function CardProject({
                             href={repoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            title={t('tooltips.viewRepo')}
+                            title={`${t('tooltips.viewRepo')} ${title} `}
                         >
                             <BiCodeAlt className="iconProject" />
                         </Link>
@@ -86,7 +86,7 @@ export default function CardProject({
                             href={liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            title={t('tooltips.viewProject')}
+                            title={`${t('tooltips.viewProject')} ${title} `}
                         >
                             <BiLink className="iconProject" />
                         </Link>

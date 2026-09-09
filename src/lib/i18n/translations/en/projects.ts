@@ -20,6 +20,8 @@ export const projects = {
         alphaSpeed: 'Alpha Speed',
 
         landingPsychology: 'Landing Page for Psychologists',
+
+        keyvault: 'KeyVault',
     },
     cardDescriptions: {
         lemnos: '<span class="spanColor">Lemnos</span> is a full-featured e-commerce platform with <span class="spanColor">authentication</span>, <span class="spanColor">advanced filters</span>, <span class="spanColor">real-time search</span>, and <span class="spanColor">infinite scroll</span>. Built with <span class="spanColor">React</span>, <span class="spanColor">Firebase</span>, and <span class="spanColor">Redux</span>, it simulates a real-world environment with an <span class="spanColor">admin panel</span> and global state management.',
@@ -35,6 +37,9 @@ export const projects = {
 
         landingPsychology:
             '<span class="spanColor">Psychology Landing Page</span> is a web application focused on <span class="spanColor">lead conversion</span>, featuring <span class="spanColor">WhatsApp integration</span> for automatic scheduling and <span class="spanColor">email form submission</span>. Built with <span class="spanColor">Next.js</span>, it prioritizes <span class="spanColor">performance</span>, <span class="spanColor">SEO</span>, and user experience.',
+
+        keyvault:
+            '<span class="spanColor">KeyVault</span> is a password manager with end-to-end <span class="spanColor">zero-knowledge</span> encryption: encryption happens entirely in the browser, with keys derived via <span class="spanColor">Argon2id</span> and <span class="spanColor">AES-256-GCM</span>. Multi-method account recovery preserves that model, without relying on the server to reconstruct the key. Built with <span class="spanColor">Next.js</span>, <span class="spanColor">TypeScript</span>, and <span class="spanColor">Prisma</span>.',
     },
     modal,
 };

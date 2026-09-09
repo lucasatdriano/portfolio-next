@@ -72,6 +72,20 @@ export const modal = {
             conclusion:
                 'O resultado é uma aplicação leve, responsiva e funcional, que resolve um problema real de negócio ao facilitar o contato entre cliente e profissional, demonstrando domínio de boas práticas e foco em experiência do usuário.',
         },
+
+        keyvault: {
+            introduction:
+                '<span class="spanColor">KeyVault</span> é um gerenciador de senhas com criptografia <span class="spanColor">zero-knowledge</span>, desenvolvido para garantir que nem mesmo o servidor tenha acesso à senha mestra ou aos dados do usuário em texto claro.',
+
+            development:
+                'A aplicação foi construída com <span class="spanColor">Next.js</span> e <span class="spanColor">TypeScript</span>, utilizando <span class="spanColor">Prisma</span> e <span class="spanColor">PostgreSQL</span> para persistência. Toda a criptografia acontece no navegador: a chave do cofre é derivada da senha mestra com <span class="spanColor">Argon2id</span>, e cada credencial é cifrada individualmente com <span class="spanColor">AES-256-GCM</span> antes de ser enviada ao servidor. Também foram implementados <span class="spanColor">múltiplos métodos de recuperação de conta</span> (e-mail, perguntas de segurança, senha e chave de recuperação) e um <span class="spanColor">log de auditoria</span> completo por usuário.',
+
+            architecture:
+                'O projeto segue uma separação clara entre client, server e código compartilhado, já que a lógica de criptografia precisa rodar no navegador enquanto tipos e validações são reaproveitados no back-end. A autenticação utiliza <span class="spanColor">sessões via JWT</span>, e a aplicação foi construída como <span class="spanColor">PWA</span>, podendo ser instalada como um app nativo.',
+
+            conclusion:
+                'O projeto aprofunda conceitos de <span class="spanColor">segurança e criptografia aplicada</span>, indo além de um CRUD comum ao lidar com derivação de chaves, cifragem ponta a ponta e fluxos de recuperação de conta sem comprometer o modelo zero-knowledge.',
+        },
     },
 
     features: {
@@ -126,6 +140,17 @@ export const modal = {
             'Interface focada em <span class="spanColor">conversão de usuários</span>',
             'Organização modular com <span class="spanColor">componentização</span>',
         ],
+
+        keyvault: [
+            'Criptografia <span class="spanColor">zero-knowledge</span> de ponta a ponta',
+            'Derivação de chave com <span class="spanColor">Argon2id</span>',
+            'Cifragem individual de credenciais com <span class="spanColor">AES-256-GCM</span>',
+            'Recuperação de conta por <span class="spanColor">múltiplos métodos</span> (perguntas, senha e chave de recuperação)',
+            'Log de <span class="spanColor">auditoria</span> por usuário',
+            'Favoritos e lixeira com soft delete',
+            'Importação e exportação de credenciais',
+            'Instalação no dispositivo via <span class="spanColor">PWA</span>',
+        ],
     },
 
     challenges: {
@@ -138,6 +163,8 @@ export const modal = {
         alphaSpeed: `O principal desafio foi ir além do escopo inicial do projeto, implementando funcionalidades como <span class="spanColor">filtros dinâmicos</span>, <span class="spanColor">renderização de catálogo com dados mockados</span> e um sistema de <span class="spanColor">login persistente com LocalStorage</span>. Isso exigiu aprendizado contínuo e aplicação prática de novos conceitos de forma autônoma, fortalecendo minha capacidade de resolver problemas e estruturar lógica em <span class="spanColor">JavaScript</span>.`,
 
         landingPsychology: `O principal desafio foi estruturar a interface com foco em <span class="spanColor">conversão</span>, garantindo que o usuário fosse direcionado de forma intuitiva até as ações principais, como o contato via WhatsApp ou formulário. Também foi necessário equilibrar <span class="spanColor">design e performance</span>, mantendo uma experiência fluida em diferentes dispositivos.`,
+
+        keyvault: `O principal desafio foi projetar um modelo de <span class="spanColor">criptografia zero-knowledge</span> real, em que o servidor nunca tem acesso à senha mestra nem aos dados em claro. Isso exigiu estruturar cuidadosamente a derivação de chaves com <span class="spanColor">Argon2id</span>, a cifragem com <span class="spanColor">AES-256-GCM</span> e, principalmente, um fluxo de <span class="spanColor">recuperação de conta</span> que funcionasse sem depender da senha mestra original, sem comprometer a segurança do cofre.`,
     },
 
     learnings: {
@@ -150,5 +177,7 @@ export const modal = {
         alphaSpeed: `Este projeto reforçou meu domínio de <span class="spanColor">JavaScript puro</span>, especialmente na <span class="spanColor">manipulação de DOM</span>, renderização dinâmica com <span class="spanColor">dados mockados</span> e implementação de <span class="spanColor">lógica de filtros</span>. Também aprimorei o uso de <span class="spanColor">LocalStorage</span> para persistência de estado no front-end. Além disso, desenvolvi a capacidade de aprender de forma <span class="spanColor">autônoma</span>, buscando soluções e aplicando novos conceitos além do escopo inicial do projeto.`,
 
         landingPsychology: `Este projeto reforçou conceitos de <span class="spanColor">componentização</span> e organização em <span class="spanColor">Next.js</span>, além de boas práticas de <span class="spanColor">UX/UI</span>. Também trouxe aprendizado na implementação de funcionalidades reais, como <span class="spanColor">envio de e-mails</span> e automação de contato via <span class="spanColor">WhatsApp</span>, aproximando o projeto de um cenário de produção.`,
+
+        keyvault: `Este projeto aprofundou meu conhecimento em <span class="spanColor">criptografia aplicada</span>, especialmente em derivação de chaves, cifragem simétrica e no desenho de sistemas seguindo o modelo <span class="spanColor">zero-knowledge</span>. Também reforcei conceitos de arquitetura em camadas com <span class="spanColor">Next.js</span> e <span class="spanColor">Prisma</span>, além de práticas de autenticação, sessão e auditoria em aplicações que lidam com dados sensíveis.`,
     },
 };

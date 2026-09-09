@@ -20,6 +20,8 @@ export const projects = {
         alphaSpeed: 'Alpha Speed',
 
         landingPsychology: 'Landing Page para Psicólogos',
+
+        keyvault: 'KeyVault',
     },
     cardDescriptions: {
         lemnos: '<span class="spanColor">Lemnos</span> é um e-commerce completo com <span class="spanColor">autenticação</span>, <span class="spanColor">filtros avançados</span>, <span class="spanColor">busca em tempo real</span> e <span class="spanColor">infinite scroll</span>. Desenvolvido com <span class="spanColor">React</span>, <span class="spanColor">Firebase</span> e <span class="spanColor">Redux</span>, simula um ambiente real com <span class="spanColor">painel administrativo</span> e gerenciamento de estado global.',
@@ -35,6 +37,9 @@ export const projects = {
 
         landingPsychology:
             '<span class="spanColor">Landing Page Psicologia</span> é uma aplicação web focada em <span class="spanColor">conversão de clientes</span>, com integração de <span class="spanColor">WhatsApp</span> para agendamento automático e <span class="spanColor">envio de e-mails</span> via formulário. Desenvolvida com <span class="spanColor">Next.js</span>, prioriza <span class="spanColor">performance</span>, <span class="spanColor">SEO</span> e experiência do usuário.',
+
+        keyvault:
+            '<span class="spanColor">KeyVault</span> é um gerenciador de senhas com criptografia <span class="spanColor">zero-knowledge</span> de ponta a ponta: a cifragem acontece inteiramente no navegador, com chaves derivadas via <span class="spanColor">Argon2id</span> e <span class="spanColor">AES-256-GCM</span>. A recuperação de conta por múltiplos métodos preserva esse modelo, sem depender do servidor para reconstruir a chave. Desenvolvido com <span class="spanColor">Next.js</span>, <span class="spanColor">TypeScript</span> e <span class="spanColor">Prisma</span>.',
     },
     modal,
 };

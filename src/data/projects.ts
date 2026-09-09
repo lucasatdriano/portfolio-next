@@ -234,4 +234,56 @@ export const projects: Project[] = [
             },
         ],
     },
+    {
+        id: 'keyvault',
+        images: [
+            '/images/projectsImages/keyVault/keyVaultDesk.png',
+            '/images/projectsImages/keyVault/keyVaultDelete.png',
+            '/images/projectsImages/keyVault/keyVaultAccount.png',
+            '/images/projectsImages/keyVault/keyVaultLogin.png',
+            '/images/projectsImages/keyVault/keyVaultRegister.png',
+            '/images/projectsImages/keyVault/keyVaultRecovery.png',
+            '/images/projectsImages/keyVault/keyVaultAudit.png',
+            '/images/projectsImages/keyVault/keyVaultSettings.png',
+            '/images/projectsImages/keyVault/keyVaultUnlock.png',
+            '/images/projectsImages/keyVault/keyVaultCreateCredential.png',
+            '/images/projectsImages/keyVault/keyVaultViewCredential.png',
+            '/images/projectsImages/keyVault/keyVaultMobile.png',
+            '/images/projectsImages/keyVault/keyVaultMobileMenu.png',
+        ],
+        repoUrl: 'https://github.com/lucasatdriano/keyvault',
+        liveUrl: 'https://usekeyvault.vercel.app/',
+        technologies: [
+            {
+                name: 'Next.js',
+                url: 'https://nextjs.org',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
+            },
+            {
+                name: 'TypeScript',
+                url: 'https://www.typescriptlang.org/docs',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
+            },
+            {
+                name: 'TailwindCSS',
+                url: 'https://tailwindcss.com/docs/installation',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+            },
+            {
+                name: 'Git',
+                url: 'https://git-scm.com/doc',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
+            },
+            {
+                name: 'Figma',
+                url: 'https://help.figma.com/hc/en-us',
+                iconUrl:
+                    'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg',
+            },
+        ],
+    },
 ];

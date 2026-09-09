@@ -30,7 +30,8 @@ export const metadata: Metadata = {
     description:
         'Portfólio de Lucas Adriano, desenvolvedor front-end com experiência em HTML, CSS, JavaScript e React.',
     authors: [{ name: 'Lucas Adriano' }],
-    keywords: 'desenvolvedor front-end, React, TypeScript, portfolio',
+    keywords:
+        'Lucas Adriano Tavares Gonçalves, desenvolvedor front-end, React, TypeScript, portfolio',
     icons: {
         icon: '/images/favicon/faviconCode.png',
     },

@@ -1,87 +1,81 @@
 # Portfólio de Lucas Adriano
 
-Este é o meu portfólio, desenvolvido utilizando **HTML**, **JavaScript** e conceitos avançados de **SASS**, como **mixins**, **funções** e **variáveis**. O site possui suporte para **modo claro e escuro** e é multilíngue, com versões em **português**, **inglês** e **espanhol**. A hospedagem foi realizada através do **Firebase**.
+Portfólio pessoal desenvolvido com **Next.js** e **TypeScript**, com estilização em **SASS** organizada em arquitetura modular, suporte a modo claro/escuro e versões em português, inglês e espanhol via rotas dinâmicas.
 
-![Logo do Portfólio](public/assets/images/readMe/logoReadMe.png)
-![Capa do Portfólio](public/assets/images/readMe/capaReadMe.png)
+<img src="public/images/readMe/capaReadMe.png" alt="Capa do Portfólio" width="100%"/>
 
 ## Índice
 
-- [Tecnologias Utilizadas](#🛠️ Tecnologias Utilizadas)
-- [Funcionalidades](#🚀 Funcionalidades)
-- [Estrutura do Projeto](#📁 Estrutura do Projeto)
-- [Como Executar o Projeto](#📝 Como Executar o Projeto)
-- [Conclusão](#🎓 Conclusão)
-- [Contato](#📞 Contato)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Funcionalidades](#funcionalidades)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Executar o Projeto](#como-executar-o-projeto)
+- [Licença](#licença)
+- [Contato](#contato)
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-**HTML**: Utilizado para a estruturação das páginas.  
-**CSS (SASS)**: Utilizado para a estilização das páginas, com o uso de mixins, variáveis e funções para otimização e reutilização de estilos.  
-**JavaScript**: Utilizado para a interatividade do site, incluindo a troca de tema e a funcionalidade de seleção de idioma.  
-**Firebase**: Utilizado para a hospedagem do site, garantindo acesso rápido e confiável.
+- **Next.js 16** (App Router) — estrutura das páginas e rotas
+- **React 19** + **TypeScript**
+- **SASS** — estilização em arquitetura modular (base, components, layout, themes, sections, animations, utils)
+- **Radix UI** — componente de diálogo acessível (modal de projetos)
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-- **Modo Claro e Escuro**: Troca entre temas para proporcionar uma experiência de leitura personalizada.
-- **Suporte Multilíngue**: O site está disponível em português, inglês e espanhol, com tradução automática das principais seções.
-- **Design Responsivo**: A página se adapta a diferentes tamanhos de tela, garantindo uma navegação fluída em dispositivos móveis e desktops.
+- **Modo claro e escuro**, com preferência salva em cookie
+- **Suporte multilíngue** — português, inglês e espanhol, com seletor de idioma
+- **Vitrine de projetos** com carrossel de imagens e modal de detalhes por projeto
+- **Efeitos de interface** — cursor com glow, efeito de digitação (typewriter) e botão de voltar ao topo
+- **Currículo para download** em PDF
+- **Design responsivo**, de mobile a desktop
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
-### **firebaseConfig.js**: Arquivo com configurações para integração com o Firebase
+```
+src/
+├── app/
+│   ├── [lang]/         # Páginas por idioma (rotas dinâmicas)
+│   └── layout.tsx      # Layout raiz, fontes e metadata
+├── components/
+│   ├── sections/        # Hero, Perfil, Projetos, Contato
+│   ├── ui/               # Cards, carrossel, tooltip, navegação, etc.
+│   ├── modals/           # Modal de detalhes do projeto
+│   └── layout/           # Componentes estruturais de layout
+├── data/                # Conteúdo de projetos, skills e contatos
+├── lib/i18n/translations # Traduções (pt-br, en, es)
+└── styles/               # SASS modular (base, components, layout, themes, sections, animations, utils)
+```
 
-### **public**
-
-- **pt-br/**: Página inicial para o idioma português (Brasil).
-- **en/**: Página inicial para o idioma inglês.
-- **es/**: Página inicial para o idioma espanhol.
-- **assets**
-  - **images**: Contém as imagens do site.
-  - **css**: Arquivos CSS gerais.
-  - **docs**: Pasta do currículo em pdf.
-  - **js**: Scripts JavaScript para funcionalidades como controle de tema e interações.
-  - **scss**: Pasta com arquivos SASS organizados em múltiplas subpastas para reutilização e organização dos estilos.
-    - **base**: Arquivos de estilo básicos, como reset de CSS e estilos globais.
-    - **components**: Estilos específicos para componentes reutilizáveis, como botões, formulários, etc.
-    - **layout**: Estilos relacionados ao layout geral da página, como grid e estrutura de página.
-    - **themes**: Arquivos de temas, incluindo as regras para o modo claro/escuro.
-    - **sections**: Arquivos contendo mixins SASS para facilitar a reutilização de código.
-    - **animations**: Definição de animações utilizadas no projeto.
-    - **utils**: Contém arquivos utilitários como `mixins` e `variables`, para reutilização de estilo e facilitar a manutenção do código.
-
-## 📝 Como Executar o Projeto
+## Como Executar o Projeto
 
 1. Clone este repositório:
 
     ```bash
-    git clone https://github.com/lucasadriano/portfolio
+    git clone https://github.com/lucasatdriano/portfolio-next.git
+    cd portfolio-next
     ```
 
-2. Acesse o diretório do projeto:
+2. Instale as dependências:
 
     ```bash
-    cd portfolio/public/pt-br
+    npm install
     ```
 
-3. Abra o arquivo `index.html` em seu navegador:
+3. Execute o projeto:
 
     ```bash
-    open index.html  # Para macOS
-    # ou
-    start index.html  # Para Windows
-    # ou
-    xdg-open index.html  # Para Linux
+    npm run dev
     ```
 
-## 🎓 Conclusão
+4. Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-Este portfólio é uma vitrine para minhas habilidades como desenvolvedor front-end, destacando o uso de **HTML**, **JavaScript** e **SASS** para criar um site interativo, responsivo e multilíngue. O objetivo é oferecer uma experiência de usuário personalizada, com funcionalidades como modo escuro e suporte a três idiomas.
+## Licença
 
-## 📞 Contato
+Distribuído sob a licença Apache 2.0. Veja [`LICENSE`](LICENSE) para mais detalhes.
 
-Este projeto foi desenvolvido por mim, Lucas Adriano. Para dúvidas ou sugestões, entre em contato:
+## Contato
 
-- **Email**: [lucasadriano@gmail.com](mailto:lucasadriano@gmail.com)
-- **LinkedIn**: [Lucas Adriano](https://linkedin.com/in/lucasadriano)
-- **GitHub**: [Lucas Adriano](https://github.com/lucasadriano)
+Desenvolvido por Lucas Adriano.
+
+- **E-mail**: [lucasatdriano@gmail.com](mailto:lucasatdriano@gmail.com)
+- **LinkedIn**: [Lucas Adriano](https://linkedin.com/in/lucasadrianodev)

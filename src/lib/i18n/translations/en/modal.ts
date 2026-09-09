@@ -73,6 +73,20 @@ export const modal = {
             conclusion:
                 'The result is a lightweight, responsive, and functional application that solves a real business problem by simplifying the contact between client and professional.',
         },
+
+        keyvault: {
+            introduction:
+                '<span class="spanColor">KeyVault</span> is a password manager with <span class="spanColor">zero-knowledge</span> encryption, built so that not even the server has access to the master password or the user\'s data in plain text.',
+
+            development:
+                'The application was built with <span class="spanColor">Next.js</span> and <span class="spanColor">TypeScript</span>, using <span class="spanColor">Prisma</span> and <span class="spanColor">PostgreSQL</span> for persistence. All encryption happens in the browser: the vault key is derived from the master password with <span class="spanColor">Argon2id</span>, and each credential is individually encrypted with <span class="spanColor">AES-256-GCM</span> before being sent to the server. It also implements <span class="spanColor">multiple account recovery methods</span> (security questions, recovery password, and recovery key) and a complete <span class="spanColor">audit log</span> per user.',
+
+            architecture:
+                'The project follows a clear separation between client, server, and shared code, since the encryption logic needs to run in the browser while types and validators are reused on the backend. Authentication relies on <span class="spanColor">JWT-based sessions</span>, and the application was built as a <span class="spanColor">PWA</span>, installable like a native app.',
+
+            conclusion:
+                'The project dives deeper into <span class="spanColor">applied security and cryptography</span>, going beyond a common CRUD by handling key derivation, end-to-end encryption, and account recovery flows without compromising the zero-knowledge model.',
+        },
     },
 
     features: {
@@ -127,6 +141,17 @@ export const modal = {
             'Interface focused on <span class="spanColor">user conversion</span>',
             'Modular structure with <span class="spanColor">componentization</span>',
         ],
+
+        keyvault: [
+            'End-to-end <span class="spanColor">zero-knowledge</span> encryption',
+            'Key derivation with <span class="spanColor">Argon2id</span>',
+            'Individual credential encryption with <span class="spanColor">AES-256-GCM</span>',
+            'Account recovery via <span class="spanColor">multiple methods</span> (security questions, recovery password, and recovery key)',
+            'Per-user <span class="spanColor">audit log</span>',
+            'Favorites and trash with soft delete',
+            'Credential import and export',
+            'Installable on device as a <span class="spanColor">PWA</span>',
+        ],
     },
 
     challenges: {
@@ -139,6 +164,8 @@ export const modal = {
         alphaSpeed: `The main challenge was going beyond the initial scope by implementing features such as <span class="spanColor">dynamic filters</span>, <span class="spanColor">catalog rendering with mock data</span>, and a <span class="spanColor">persistent login system using LocalStorage</span>. This required continuous learning and applying new concepts independently, strengthening problem-solving and JavaScript logic skills.`,
 
         landingPsychology: `The main challenge was designing the interface with a strong focus on <span class="spanColor">conversion</span>, ensuring users are intuitively guided to key actions such as contacting via WhatsApp or form submission. Another challenge was balancing <span class="spanColor">design and performance</span> across different devices.`,
+
+        keyvault: `The main challenge was designing a real <span class="spanColor">zero-knowledge encryption</span> model, where the server never has access to the master password or the data in plain text. This required carefully structuring key derivation with <span class="spanColor">Argon2id</span>, encryption with <span class="spanColor">AES-256-GCM</span>, and, most importantly, an <span class="spanColor">account recovery</span> flow that works without depending on the original master password, without compromising the vault's security.`,
     },
 
     learnings: {
@@ -151,5 +178,7 @@ export const modal = {
         alphaSpeed: `This project strengthened my knowledge of <span class="spanColor">vanilla JavaScript</span>, especially in <span class="spanColor">DOM manipulation</span>, dynamic rendering with <span class="spanColor">mock data</span>, and filter logic implementation. I also improved my use of <span class="spanColor">LocalStorage</span> for frontend state persistence. Additionally, I developed stronger <span class="spanColor">self-learning</span> and problem-solving skills by going beyond the original project scope.`,
 
         landingPsychology: `This project reinforced concepts of <span class="spanColor">component-based architecture</span> and project organization in <span class="spanColor">Next.js</span>, as well as <span class="spanColor">UX/UI best practices</span>. It also provided experience with real-world integrations such as <span class="spanColor">email sending</span> and <span class="spanColor">WhatsApp automation</span>.`,
+
+        keyvault: `This project deepened my knowledge of <span class="spanColor">applied cryptography</span>, especially key derivation, symmetric encryption, and designing systems around the <span class="spanColor">zero-knowledge</span> model. It also reinforced layered architecture concepts with <span class="spanColor">Next.js</span> and <span class="spanColor">Prisma</span>, along with authentication, session, and audit practices in applications handling sensitive data.`,
     },
 };
